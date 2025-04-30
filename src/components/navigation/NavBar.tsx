@@ -45,7 +45,7 @@ export const NavBar: React.FC = () => {
     <>
       {/* Main Navigation Bar */}
       <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm z-50 py-4 px-6 flex justify-center border-b border-zinc-200 dark:border-zinc-800">
-        <div className="w-full max-w-3xl flex justify-between items-center">
+        <div className="w-full max-w-5xl flex justify-between items-center">
           {/* Logo/Title */}
           <h2 className="font-bold text-xl">My Portfolio</h2>
 

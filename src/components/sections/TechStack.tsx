@@ -1,5 +1,5 @@
-import React from "react";
 import { Badge } from "../ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 // Import icons
 import {
   FaReact,
@@ -138,42 +138,40 @@ export default function TechStack() {
   };
 
   return (
-    <section id="tech-stack" className="py-1">
-      <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 transition-shadow duration-300 hover:shadow-md">
-        {/* Card Header with Icon */}
-        <div className="p-6 pb-0">
-          <div className="flex items-center gap-2 mb-4">
-            <FaTools className="h-5 w-5 text-black dark:text-white" />
-            <h2 className="text-xl font-semibold">Tech Stack</h2>
+    <Card id="tech-stack" className="scroll-mt-20">
+      <CardHeader>
+        <div className="flex items-center space-x-3">
+          <div className="text-xl text-primary dark:text-primary-400">
+            <FaTools aria-hidden="true" />
           </div>
+          <CardTitle className="text-2xl font-semibold">Tech Stack</CardTitle>
         </div>
+      </CardHeader>
 
-        {/* Card Body */}
-        <div className="p-6 pt-0">
-          <div className="space-y-4">
-            {Object.entries(stack).map(([category, technologies]) => (
-              <div key={category} className="space-y-2">
-                <h3 className="text-lg font-medium pb-1 border-b border-zinc-200 dark:border-zinc-700">
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {technologies.map((tech) => (
-                    <Badge
-                      key={tech.name}
-                      variant="outline"
-                      className="px-3 py-1 text-sm font-medium flex items-center border-zinc-300 dark:border-zinc-600 
-                      bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 
-                      transition-colors cursor-pointer text-black dark:text-white"
-                    >
-                      {tech.icon} {tech.name}
-                    </Badge>
-                  ))}
-                </div>
+      <CardContent className="pt-0">
+        <div className="space-y-4">
+          {Object.entries(stack).map(([category, technologies]) => (
+            <div key={category} className="space-y-2">
+              <h3 className="text-lg font-medium pb-1 border-b border-zinc-200 dark:border-zinc-700">
+                {category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {technologies.map((tech) => (
+                  <Badge
+                    key={tech.name}
+                    variant="outline"
+                    className="px-3 py-1 text-sm font-medium flex items-center border-zinc-300 dark:border-zinc-600 
+                    bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 
+                    transition-colors cursor-pointer text-zinc-800 dark:text-zinc-200"
+                  >
+                    {tech.icon} {tech.name}
+                  </Badge>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }

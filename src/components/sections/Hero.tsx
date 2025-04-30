@@ -1,33 +1,33 @@
-import React from "react";
+import profilePic from "../../assets/profilepic.jpg";
 
 interface HeroProps {
-  name: string;
-  location: string;
-  title: string;
-  email: string;
-  profileImage: string;
+  name?: string;
+  location?: string;
+  title?: string;
+  email?: string;
+  profileImage?: string;
 }
 
 export default function Hero({
-  name = "Your Name",
-  location = "Your Location",
-  title = "Software Engineer and Developer",
-  email = "your-email@example.com",
-  profileImage = "/profile-image.jpg",
+  name = "John Paul C. Varde",
+  location = "Quezon City, Philippines",
+  title = "Front-End Developer and UI/UX Designer",
+  email = "johnpaulvarde13@gmail.com",
+  profileImage = profilePic,
 }: HeroProps) {
   return (
     <section className="flex flex-col md:flex-row gap-8 items-center">
-      <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full">
+      <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full mx-auto md:mx-0 border-4 border-zinc-900 dark:border-zinc-800">
         <img
           src={profileImage}
           alt="Profile"
           className="w-full h-full object-cover"
         />
       </div>
-      <div>
+      <div className="text-center md:text-left">
         <h1 className="text-3xl md:text-4xl font-bold mb-2">{name}</h1>
         <p className="text-zinc-600 dark:text-zinc-400 mb-2">
-          <span className="inline-flex items-center">
+          <span className="inline-flex items-center justify-center md:justify-start">
             <svg
               className="w-4 h-4 mr-1"
               fill="currentColor"
@@ -43,7 +43,7 @@ export default function Hero({
           </span>
         </p>
         <p className="text-xl mb-4">{title}</p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 justify-center md:justify-start">
           <a
             href="/path-to-your-resume.pdf"
             target="_blank"
@@ -57,7 +57,7 @@ export default function Hero({
             My Resume
           </a>
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=johnpaulvarde13@gmail.com"
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
             target="_blank"
             rel="noopener noreferrer"
             className="border border-zinc-300 dark:border-zinc-700 px-4 py-2 rounded-md flex items-center gap-2 transition-all duration-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:shadow-md"
