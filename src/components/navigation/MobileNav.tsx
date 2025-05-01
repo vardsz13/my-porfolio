@@ -40,14 +40,19 @@ export const MobileNav: React.FC<MobileNavProps> = ({ closeMenu }) => {
   return (
     <div className="fixed inset-0 z-40 bg-white dark:bg-zinc-900 pt-20 px-6 md:hidden">
       <div className="flex flex-col space-y-6 items-center">
-        {/* Map through navigation items */}
+        {/* Map through navigation items with enhanced click handler */}
         {NAV_ITEMS.map((item) => (
           <ScrollLink
             key={item.to}
             to={item.to}
             smooth={true}
-            className="text-lg cursor-pointer hover:text-blue-500"
-            onClick={closeMenu} // Simplified
+            duration={800}
+            delay={100}
+            offset={-80}
+            spy={true}
+            isDynamic={true}
+            className="text-lg cursor-pointer hover:text-blue-500 transition-colors"
+            onClick={closeMenu}
           >
             {item.label}
           </ScrollLink>

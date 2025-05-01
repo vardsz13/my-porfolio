@@ -16,7 +16,13 @@ export const DesktopNav: React.FC = () => {
           key={item.to}
           to={item.to}
           smooth={true}
-          className="cursor-pointer hover:text-blue-500"
+          duration={800}
+          offset={-80}
+          spy={true}
+          hashSpy={true}
+          activeClass="text-blue-500 font-medium"
+          className="cursor-pointer hover:text-blue-500 transition-colors"
+          isDynamic={true}
         >
           {item.label}
         </ScrollLink>

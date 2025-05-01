@@ -3,9 +3,10 @@
  * Central place to manage all navigation links
  */
 export const NAV_ITEMS = [
-    { to: "about", label: "About" },
-    { to: "tech-stack", label: "Tech Stack" },
-    { to: "experience", label: "Experience" },
-    { to: "projects", label: "Projects" },
-    { to: "contact", label: "Contact" },
-  ];
+  { to: "about", label: "About" },
+  { to: "tech-stack", label: "Tech Stack" },
+  { to: "experience", label: "Experience" },
+  { to: "certifications", label: "Certifications" },
+  { to: "projects", label: "Projects" },
+  { to: "contact", label: "Contact" },
+];

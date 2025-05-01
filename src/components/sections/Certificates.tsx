@@ -103,6 +103,7 @@ export default function Certificates() {
     <SectionCard
       title="Certifications"
       icon={<FaCertificate className="text-zinc-900 dark:text-zinc-100" />}
+      id="certifications"
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {certificates.map((cert, index) => (
