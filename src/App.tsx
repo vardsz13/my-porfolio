@@ -5,6 +5,7 @@ import TechStack from "./components/sections/TechStack";
 import Experience from "./components/sections/Experience";
 import Education from "./components/sections/Education";
 import Contact from "./components/sections/Contact";
+import Certificate from "./components/sections/Certificates";
 import NavBar from "./components/navigation/NavBar";
 import { Toaster } from "sonner"; // Import Sonner Toaster
 
@@ -76,6 +77,11 @@ export default function App() {
         {/* Full Width Experience Section */}
         <div className="mt-6">
           <Experience />
+        </div>
+
+        {/* Full Width Certificate Section */}
+        <div className="mt-6">
+          <Certificate />
         </div>
       </div>
 
