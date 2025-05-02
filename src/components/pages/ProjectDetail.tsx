@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Github, ExternalLink, X } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 
@@ -11,6 +11,8 @@ export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const navigate = useNavigate();
+
   // Find the project by ID
   const project = projects.find((p) => p.id === id);
 
@@ -59,6 +61,24 @@ export default function ProjectDetail() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage]);
 
+  // Handle back button with transition
+  const handleBackClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Add fade-out transition
+    document.body.classList.add("page-transition-out");
+
+    // Wait for the transition to complete before navigating
+    setTimeout(() => {
+      navigate("/#projects");
+
+      // Delay the removal of transition class slightly to ensure smooth transition
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.body.classList.remove("page-transition-out");
+      }, 50);
+    }, 400); // Match this with your CSS transition duration (slightly longer)
+  };
+
   // Show a minimal loading state before mounting completes
   if (!mounted) {
     return <div className="min-h-screen bg-gray-50 dark:bg-zinc-900"></div>;
@@ -69,11 +89,9 @@ export default function ProjectDetail() {
       <div className="min-h-screen bg-gray-50 dark:bg-zinc-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Project not found</h1>
-          <Button asChild>
-            <Link to="/#projects" className="flex items-center">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              <span>Back to Projects</span>
-            </Link>
+          <Button onClick={handleBackClick} className="flex items-center">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            <span>Back to Projects</span>
           </Button>
         </div>
       </div>
@@ -103,13 +121,11 @@ export default function ProjectDetail() {
         <Button
           variant="ghost"
           size="sm"
-          asChild
-          className="mb-4 hover:bg-gray-100 dark:hover:bg-zinc-800"
+          onClick={handleBackClick}
+          className="mb-4 hover:bg-gray-100 dark:hover:bg-zinc-800 flex items-center"
         >
-          <Link to="/#projects" className="flex items-center">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            <span>Back to Projects</span>
-          </Link>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          <span>Back to Projects</span>
         </Button>
 
         {/* PROJECT OVERVIEW SECTION - Hero style with reduced spacing */}
@@ -141,7 +157,7 @@ export default function ProjectDetail() {
           {project.imageUrl && (
             <div className="mb-6">
               <div
-                className="w-full rounded-lg overflow-hidden shadow-md cursor-pointer transition-transform hover:scale-[1.01]"
+                className="w-full rounded-lg overflow-hidden shadow-md cursor-pointer"
                 onClick={() => setSelectedImage(project.imageUrl)}
                 role="button"
                 aria-label="View larger image"
@@ -202,14 +218,14 @@ export default function ProjectDetail() {
               {project.modules.map((module, moduleIndex) => (
                 <div
                   key={moduleIndex}
-                  className="bg-gray-50 dark:bg-zinc-700 rounded-lg p-4 shadow-sm"
+                  className="bg-gray-50 dark:bg-zinc-700 rounded-lg p-4 transition duration-200 ease-in-out border border-transparent hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-lg"
                 >
                   <div className="flex flex-col gap-3">
                     {/* Image first - slightly smaller with max height */}
                     {module.imageUrl && (
                       <div
                         onClick={() => setSelectedImage(module.imageUrl)}
-                        className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-transform hover:scale-[1.02] cursor-pointer"
+                        className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 cursor-pointer"
                         role="button"
                         aria-label={`View larger image of ${module.title}`}
                         tabIndex={0}
