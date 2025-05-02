@@ -17,7 +17,7 @@ export default function SectionCard({
   className,
 }: SectionCardProps) {
   return (
-    <Card id={id} className={`scroll-mt-20 ${className}`}>
+    <Card id={id} className={`scroll-mt-20  ${className}`}>
       <CardHeader>
         <div className="flex items-center space-x-3">
           <div className="text-xl text-primary dark:text-primary-400">
