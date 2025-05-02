@@ -4,15 +4,48 @@ import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink, X } from "lucide-react";
-import Text from "@/components/sections/Text";
 import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
   // Find the project by ID
   const project = projects.find((p) => p.id === id);
+
+  // Handle theme persistence on mount
+  useEffect(() => {
+    setMounted(true);
+
+    // Check for stored theme preference - match the implementation from DarkModeToggle.tsx
+    const savedPreference = localStorage.getItem("darkMode");
+
+    // If we have a saved preference, use that
+    if (savedPreference !== null) {
+      const isDark = savedPreference === "true";
+
+      // Apply the saved preference
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+    // Otherwise, use system preference
+    else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      // Apply the system preference
+      if (prefersDark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }, []);
 
   // Handle keyboard events for the dialog
   useEffect(() => {
@@ -25,6 +58,11 @@ export default function ProjectDetail() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage]);
+
+  // Show a minimal loading state before mounting completes
+  if (!mounted) {
+    return <div className="min-h-screen bg-gray-50 dark:bg-zinc-900"></div>;
+  }
 
   if (!project) {
     return (
@@ -41,7 +79,6 @@ export default function ProjectDetail() {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-zinc-900">
       {/* Image Dialog - Enhanced for larger image display */}
@@ -49,8 +86,7 @@ export default function ProjectDetail() {
         open={!!selectedImage}
         onOpenChange={(open) => !open && setSelectedImage(null)}
       >
-        <DialogOverlay className="bg-black/90" />{" "}
-        {/* Darker overlay for better contrast */}
+        <DialogOverlay className="bg-black/90" />
         <DialogContent className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0">
           <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
             <img
@@ -162,52 +198,63 @@ export default function ProjectDetail() {
         {project.modules && project.modules.length > 0 && (
           <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-md overflow-hidden p-6 mb-6">
             <h2 className="text-2xl font-bold mb-4">Project Modules</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col gap-4">
               {project.modules.map((module, moduleIndex) => (
                 <div
                   key={moduleIndex}
                   className="bg-gray-50 dark:bg-zinc-700 rounded-lg p-4 shadow-sm"
                 >
-                  {/* Image first - clickable to open in modal instead of new tab */}
-                  {module.imageUrl && (
-                    <div
-                      onClick={() => setSelectedImage(module.imageUrl)}
-                      className="block mb-4 rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-transform hover:scale-[1.02] cursor-pointer"
-                      role="button"
-                      aria-label={`View larger image of ${module.title}`}
-                      tabIndex={0}
-                      onKeyDown={(e) =>
-                        e.key === "Enter" && setSelectedImage(module.imageUrl)
-                      }
-                    >
-                      <img
-                        src={module.imageUrl}
-                        alt={module.title}
-                        className="w-full object-cover"
-                      />
-                    </div>
-                  )}
+                  <div className="flex flex-col gap-3">
+                    {/* Image first - slightly smaller with max height */}
+                    {module.imageUrl && (
+                      <div
+                        onClick={() => setSelectedImage(module.imageUrl)}
+                        className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 transition-transform hover:scale-[1.02] cursor-pointer"
+                        role="button"
+                        aria-label={`View larger image of ${module.title}`}
+                        tabIndex={0}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && setSelectedImage(module.imageUrl)
+                        }
+                      >
+                        <img
+                          src={module.imageUrl}
+                          alt={module.title}
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    )}
 
-                  {/* Title after image - in italics */}
-                  <h3 className="text-md font-semibold italic mb-2">
-                    {module.title}
-                  </h3>
+                    {/* Title after image */}
+                    <h3 className="text-lg font-semibold italic">
+                      {module.title}
+                    </h3>
 
-                  {/* Description after title */}
-                  {module.description && (
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {module.description}
-                    </p>
-                  )}
+                    {/* Description last */}
+                    {module.description && (
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {module.description}
+                      </p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         )}
 
-        {/* Include Text component */}
-        <div className="mt-2">
-          <Text />
+        {/* Add border line before Let's Connect section */}
+        <hr className="border-t border-zinc-200 dark:border-zinc-800 my-10" />
+
+        {/* Let's Connect section */}
+        <div className="text-left">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+            Let's Connect
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            Interested in discussing this project or working together? Feel free
+            to reach out!
+          </p>
         </div>
       </div>
 

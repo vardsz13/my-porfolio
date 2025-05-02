@@ -1,4 +1,12 @@
-import portfolioImage from '../assets/projects/portfolio-website.png';
+import portfolioImage from '../assets/projects/porfolio-website/portfolio-website.png';
+import ecommerceImage from '../assets/projects/ecommerce-website/ecommerce-website.png';
+import iotImage from '../assets/projects/iot-mobile-app/iot-mobile-app.png';
+import iotHomeModuleImage from '../assets/projects/iot-mobile-app/iot-home-module.png';
+import iotSensorModuleImage from '../assets/projects/iot-mobile-app/iot-sensor-module.png'; 
+import iotAlarmStateModuleImage from '../assets/projects/iot-mobile-app/iot-alarm-state-module.png';
+import iotHardwareIntegrationImage from '../assets/projects/iot-mobile-app/iot-hardware-integration.png';
+import iotContactModuleImage from '../assets/projects/iot-mobile-app/iot-contact-module.png';
+import iotAboutModuleImage from '../assets/projects/iot-mobile-app/iot-about-module.png';
 
 export const projects = [
   {
@@ -8,7 +16,7 @@ export const projects = [
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/yourusername/portfolio",
     liveUrl: "https://yourportfolio.com",
-    imageUrl: portfolioImage, // Using imported image
+    imageUrl: portfolioImage,
     modules: [
       {
         title: "Responsive Design",
@@ -28,54 +36,100 @@ export const projects = [
     ]
   },
   {
-    id: "ecommerce-dashboard",
-    title: "E-commerce Dashboard",
-    description: "A comprehensive admin dashboard for e-commerce platforms with analytics, inventory management, and order tracking.",
-    technologies: ["Next.js", "Redux", "Chart.js", "Firebase"],
-    githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
-    liveUrl: "https://dashboard-demo.yourdomain.com",
-    imageUrl: "/images/projects/dashboard.jpg", // You can import this image too if available
+    id: "file-management-system",
+    title: "Web-based File Management System",
+    description: "A comprehensive file management system built with Laravel and React for efficient document organization and sharing.",
+    technologies: ["Laravel", "Inertia JS", "React", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+    githubUrl: "https://github.com/yourusername/file-management",
+    liveUrl: "https://file-manager-demo.yourdomain.com",
+    imageUrl: portfolioImage,
     modules: [
       {
-        title: "Analytics Dashboard",
-        description: "Real-time sales analytics with interactive charts and customizable date ranges.",
-        imageUrl: "/images/projects/dashboard-analytics.jpg",
+        title: "User Authentication",
+        description: "Secure user authentication system with role-based access control.",
+        imageUrl: "/images/projects/file-auth.jpg",
       },
       {
-        title: "Inventory Management",
-        description: "Comprehensive inventory tracking system with low-stock alerts and batch operations.",
-        imageUrl: "/images/projects/dashboard-inventory.jpg",
+        title: "File Organization",
+        description: "Intuitive file organization with folders, tags, and advanced search capabilities.",
+        imageUrl: "/images/projects/file-organization.jpg",
       },
       {
-        title: "Order Processing",
-        description: "Order management workflow with status tracking and customer communication tools.",
-        imageUrl: "/images/projects/dashboard-orders.jpg",
+        title: "Sharing & Collaboration",
+        description: "Advanced file sharing options with permission controls and collaboration features.",
+        imageUrl: "/images/projects/file-sharing.jpg",
       },
     ]
   },
   {
-    id: "weather-app",
-    title: "Weather Application",
-    description: "A web application that provides real-time weather forecasts and historical data for locations worldwide.",
-    technologies: ["React", "OpenWeather API", "Styled Components"],
-    githubUrl: "https://github.com/yourusername/weather-app",
-    liveUrl: "https://weather-app.yourdomain.com",
-    imageUrl: "/images/projects/weather-app.jpg", // You can import this image too if available
+    id: "iot-mobile-app",
+    title: "Mobile App with IoT Technologies",
+    description: "A Flutter-based mobile application that integrates with IoT devices for smart home monitoring and control.",
+    technologies: ["Flutter", "Dart", "C/C++", "Firebase"],
+    githubUrl: "https://github.com/yourusername/iot-app",
+    liveUrl: "https://iot-app-demo.yourdomain.com",
+    imageUrl: iotImage,
     modules: [
       {
-        title: "Location Search",
-        description: "Intuitive location search with autocomplete and saved location history.",
-        imageUrl: "/images/projects/weather-search.jpg",
+        title: "Home Module",
+        description: "Central dashboard for monitoring all connected devices and current status.",
+        imageUrl: iotHomeModuleImage,
       },
       {
-        title: "Current Conditions",
-        description: "Detailed current weather conditions with visual indicators for temperature, precipitation, and more.",
-        imageUrl: "/images/projects/weather-current.jpg",
+        title: "Sensor Module",
+        description: "Real-time data collection and visualization from various IoT sensors.",
+        imageUrl: iotSensorModuleImage,
       },
       {
-        title: "Forecast View",
-        description: "7-day forecast with hourly breakdowns and interactive visualization.",
-        imageUrl: "/images/projects/weather-forecast.jpg",
+        title: "Alarm State Module",
+        description: "Configurable alert system with notification preferences and history.",
+        imageUrl: iotAlarmStateModuleImage,
+      },
+      {
+        title: "Contact Module",
+        description: "User support interface with direct messaging and help resources for troubleshooting.",
+        imageUrl: iotContactModuleImage,
+      },
+      {
+        title: "About Module",
+        description: "Information about the application, version details, and developer documentation.",
+        imageUrl: iotAboutModuleImage,
+      },
+      {
+        title: "IoT Hardware Integration",
+        description: "Custom firmware development for integrating with various IoT devices.",
+        imageUrl: iotHardwareIntegrationImage,
+      },
+    ]
+  },
+  {
+    id: "ecommerce-website",
+    title: "E-commerce Website",
+    description: "A full-featured e-commerce platform with product catalog, shopping cart, and admin dashboard.",
+    technologies: ["HTML5", "CSS", "Bootstrap", "JavaScript", "PHP", "phpMyAdmin"],
+    githubUrl: "https://github.com/yourusername/ecommerce-website",
+    liveUrl: "https://ecommerce-demo.yourdomain.com",
+    imageUrl: ecommerceImage,
+    modules: [
+      {
+        title: "Product Catalog",
+        description: "Comprehensive product listing with categories, filters, and search functionality.",
+        imageUrl: "/images/projects/ecom-products.jpg",
+      },
+      {
+        title: "Shopping Cart",
+        description: "Intuitive cart system with product management and checkout process.",
+        imageUrl: "/images/projects/ecom-cart.jpg",
+      },
+      {
+        title: "Admin Dashboard",
+        description: "Complete admin interface for managing products, orders, customers, and store analytics.",
+        imageUrl: "/images/projects/ecom-admin.jpg",
+      },
+      {
+        title: "Transaction System",
+        description: "Secure order processing with receipt generation and transaction history.",
+        imageUrl: "/images/projects/ecom-transactions.jpg",
       },
     ]
   }
