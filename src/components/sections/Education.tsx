@@ -2,18 +2,18 @@ import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Image from "@/assets/tiplogo.png"; // Adjust the path as necessary
+import Image from "@/assets/sample-school.png"; // Adjust the path as necessary
 
 const Education: React.FC = () => {
   // Education data
   const education = {
-    degree: "Bachelor of Science in Information Technology",
-    institution: "Technological Institute of the Philippines - Quezon City",
+    degree: "Bachelor of Science in Computer Science",
+    institution: "University of California, Berkeley - (UC Berkeley)",
     period: "2021 – 2025",
   };
 
   return (
-    <Card id="education" className="scroll-mt-20 flex flex-col min-h-[300px]">
+    <Card id="education" className="scroll-mt-20 flex flex-col h-full">
       <CardHeader className="pb-3">
         <div className="flex items-center space-x-3">
           <div className="text-xl text-primary dark:text-primary-400">
@@ -23,7 +23,7 @@ const Education: React.FC = () => {
         </div>
       </CardHeader>
 
-      <CardContent className="pt-0 flex-grow">
+      <CardContent className="pt-0 flex-grow flex flex-col">
         <div className="h-full flex flex-col">
           <div className="p-4 rounded-lg bg-zinc-50/80 dark:bg-zinc-800/50 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:bg-white dark:hover:bg-zinc-800 transition-colors duration-200 flex-grow">
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">
