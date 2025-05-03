@@ -13,4 +13,5 @@ export interface ProjectModule {
     liveUrl?: string;
     imageUrl?: string;
     modules?: ProjectModule[];
+    year?: number;
   }

@@ -18,6 +18,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/portfolio",
     liveUrl: "https://yourportfolio.com",
     imageUrl: portfolioImage,
+    year: 2025,
     modules: [
       {
         title: "Responsive Design",
@@ -40,9 +41,10 @@ export const projects: Project[] = [
     id: "file-management-system",
     title: "Web-based File Management System",
     description: "A comprehensive file management system built with Laravel and React for efficient document organization and sharing.",
-    technologies: ["Laravel", "Inertia JS", "React", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+    technologies: ["Laravel", "React", "TypeScript", "Tailwind CSS", "PostgreSQL"],
     githubUrl: "https://github.com/yourusername/file-management",
     liveUrl: "https://file-manager-demo.yourdomain.com",
+    year: 2025,
     imageUrl: portfolioImage,
     modules: [
       {
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/iot-app",
     liveUrl: "https://iot-app-demo.yourdomain.com",
     imageUrl: iotImage,
+    year: 2024,
     modules: [
       {
         title: "Home Module",
@@ -111,6 +114,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/ecommerce-website",
     liveUrl: "https://ecommerce-demo.yourdomain.com",
     imageUrl: ecommerceImage,
+    year: 2024,
     modules: [
       {
         title: "Product Catalog",

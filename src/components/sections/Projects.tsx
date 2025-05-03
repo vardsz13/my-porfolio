@@ -94,7 +94,14 @@ export default function Projects({ projects }: ProjectsProps) {
             )}
 
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <div className="flex justify-between items-start">
+                <CardTitle>{project.title}</CardTitle>
+                {project.year && (
+                  <Badge variant="outline" className="text-xs font-mono">
+                    {project.year}
+                  </Badge>
+                )}
+              </div>
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
 

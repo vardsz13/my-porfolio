@@ -121,12 +121,19 @@ export default function ProjectDetail() {
           <span>Back to Projects</span>
         </Button>
 
-        {/* PROJECT OVERVIEW SECTION - Hero style with reduced spacing */}
+        {/* PROJECT OVERVIEW SECTION */}
         <div className="mb-8">
-          {/* Title and description */}
-          <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-            {project.title}
-          </h1>
+          {/* Title and year badge with responsive layout */}
+          <div className="flex flex-wrap items-center mb-4">
+            <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mr-3">
+              {project.title}
+            </h1>
+            {project.year && (
+              <Badge variant="outline" className="text-sm font-mono mt-1">
+                {project.year}
+              </Badge>
+            )}
+          </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-3xl">
             {project.description}
           </p>
@@ -275,8 +282,11 @@ export default function ProjectDetail() {
         </div>
       </div>
 
-      {/* Include Footer component */}
-      <Footer />
+      {/* Footer with container to match content width */}
+
+      <div className="container max-w-5xl mx-auto px-4">
+        <Footer />
+      </div>
     </div>
   );
 }
