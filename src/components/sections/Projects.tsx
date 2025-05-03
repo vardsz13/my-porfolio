@@ -12,21 +12,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  imageUrl?: string;
-  modules?: {
-    title: string;
-    description?: string;
-    imageUrl?: string;
-  }[];
-}
+import { Project } from "@/types/project";
 
 interface ProjectsProps {
   projects: Project[];

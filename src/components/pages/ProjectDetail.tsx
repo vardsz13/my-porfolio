@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
+import { Project } from "@/types/project";
+import { handlePageTransition } from "@/utils/pageTransition";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -64,19 +66,10 @@ export default function ProjectDetail() {
   // Handle back button with transition
   const handleBackClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Add fade-out transition
-    document.body.classList.add("page-transition-out");
-
-    // Wait for the transition to complete before navigating
-    setTimeout(() => {
+    handlePageTransition(() => {
       navigate("/#projects");
-
-      // Delay the removal of transition class slightly to ensure smooth transition
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        document.body.classList.remove("page-transition-out");
-      }, 50);
-    }, 400); // Match this with your CSS transition duration (slightly longer)
+      window.scrollTo(0, 0);
+    });
   };
 
   // Show a minimal loading state before mounting completes
@@ -158,12 +151,16 @@ export default function ProjectDetail() {
             <div className="mb-6">
               <div
                 className="w-full rounded-lg overflow-hidden shadow-md cursor-pointer"
-                onClick={() => setSelectedImage(project.imageUrl)}
+                onClick={() =>
+                  project.imageUrl && setSelectedImage(project.imageUrl)
+                }
                 role="button"
                 aria-label="View larger image"
                 tabIndex={0}
                 onKeyDown={(e) =>
-                  e.key === "Enter" && setSelectedImage(project.imageUrl)
+                  e.key === "Enter" &&
+                  project.imageUrl &&
+                  setSelectedImage(project.imageUrl)
                 }
               >
                 <img
@@ -224,13 +221,17 @@ export default function ProjectDetail() {
                     {/* Image first - slightly smaller with max height */}
                     {module.imageUrl && (
                       <div
-                        onClick={() => setSelectedImage(module.imageUrl)}
+                        onClick={() =>
+                          module.imageUrl && setSelectedImage(module.imageUrl)
+                        }
                         className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 cursor-pointer"
                         role="button"
                         aria-label={`View larger image of ${module.title}`}
                         tabIndex={0}
                         onKeyDown={(e) =>
-                          e.key === "Enter" && setSelectedImage(module.imageUrl)
+                          e.key === "Enter" &&
+                          module.imageUrl &&
+                          setSelectedImage(module.imageUrl)
                         }
                       >
                         <img

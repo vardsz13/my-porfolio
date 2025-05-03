@@ -1,31 +1,25 @@
-import profilePic from "../../assets/profilepic.jpg";
+import { heroData } from "@/data/hero";
 
-interface HeroProps {
-  name?: string;
-  location?: string;
-  title?: string;
-  email?: string;
-  profileImage?: string;
-}
-
-export default function Hero({
-  name = "John Paul C. Varde",
-  location = "Quezon City, Philippines",
-  title = "Front-End Developer and UI/UX Designer",
-  email = "johnpaulvarde13@gmail.com",
-  profileImage = profilePic,
-}: HeroProps) {
+export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row gap-8 items-center">
-      <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full mx-auto md:mx-0 border-4 border-zinc-900 dark:border-zinc-800">
-        <img
-          src={profileImage}
-          alt="Profile"
-          className="w-full h-full object-cover"
-        />
+    <section className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+      <div className="relative mx-auto md:mx-0 mb-1 md:mb-0">
+        <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full border-4 border-zinc-900 dark:border-zinc-800">
+          <img
+            src={heroData.profileImage}
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        {heroData.availableToWork && (
+          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white text-xs px-3 py-0.5 rounded-full inline-flex items-center shadow-md z-10 whitespace-nowrap">
+            <span className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></span>
+            Available for Work
+          </div>
+        )}
       </div>
-      <div className="text-center md:text-left">
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">{name}</h1>
+      <div className="text-center md:text-left mt-1 md:mt-0">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">{heroData.name}</h1>
         <p className="text-zinc-600 dark:text-zinc-400 mb-2">
           <span className="inline-flex items-center justify-center md:justify-start">
             <svg
@@ -39,10 +33,10 @@ export default function Hero({
                 clipRule="evenodd"
               />
             </svg>
-            {location}
+            {heroData.location}
           </span>
         </p>
-        <p className="text-xl mb-4">{title}</p>
+        <p className="text-xl mb-3">{heroData.title}</p>
         <div className="flex gap-2 justify-center md:justify-start">
           <a
             href="/path-to-your-resume.pdf"
@@ -57,7 +51,7 @@ export default function Hero({
             My Resume
           </a>
           <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${heroData.email}`}
             target="_blank"
             rel="noopener noreferrer"
             className="border border-zinc-300 dark:border-zinc-700 px-4 py-2 rounded-md flex items-center gap-2 transition-all duration-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:shadow-md"

@@ -2,44 +2,9 @@ import React from "react";
 import { FaBriefcase } from "react-icons/fa";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { experiences } from "@/data/experiences";
 
-interface ExperienceProps {
-  experiences?: {
-    title: string;
-    company: string;
-    year: string;
-    description: string[];
-  }[];
-}
-
-const Experience: React.FC<ExperienceProps> = ({
-  experiences: externalExperiences,
-}) => {
-  // Default data kung walang ipapasa sa component
-  const defaultExperiences = [
-    {
-      title: "Software Developer Intern",
-      company: "Technological Institute of the Philippines",
-      year: "2025",
-      description: [
-        "Developed a File Management System for a private organization to manage and organize digital documents.",
-        "Followed ISO/IEC 25010 software quality standards to ensure usability, reliability, and maintainability.",
-      ],
-    },
-    {
-      title: "Freelance UI & Front-End Developer",
-      company: "",
-      year: "2024",
-      description: [
-        "Designed and developed responsive websites",
-        "Collaborated with clients to deliver custom UI/UX solutions.",
-      ],
-    },
-  ];
-
-  // Gamitin ang externalExperiences kung meron, otherwise gamitin ang default
-  const experiencesToUse = externalExperiences || defaultExperiences;
-
+const Experience: React.FC = () => {
   return (
     <Card id="experience" className="scroll-mt-20">
       <CardHeader>
@@ -56,7 +21,7 @@ const Experience: React.FC<ExperienceProps> = ({
           {/* Timeline line */}
           <div className="absolute left-2.5 top-4 bottom-0 w-0.5 bg-zinc-200 dark:bg-zinc-700"></div>
 
-          {experiencesToUse.map((exp, index) => (
+          {experiences.map((exp, index) => (
             <div key={index} className="relative pl-10 pb-6 last:pb-0">
               {/* Timeline dot - smaller size */}
               <div className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-3 border-white dark:border-zinc-900 bg-zinc-600 dark:bg-zinc-500 shadow-md z-10"></div>

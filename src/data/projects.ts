@@ -1,3 +1,4 @@
+import { Project } from '@/types/project';
 import portfolioImage from '../assets/projects/porfolio-website/portfolio-website.png';
 import ecommerceImage from '../assets/projects/ecommerce-website/ecommerce-website.png';
 import iotImage from '../assets/projects/iot-mobile-app/iot-mobile-app.png';
@@ -8,7 +9,7 @@ import iotHardwareIntegrationImage from '../assets/projects/iot-mobile-app/iot-h
 import iotContactModuleImage from '../assets/projects/iot-mobile-app/iot-contact-module.png';
 import iotAboutModuleImage from '../assets/projects/iot-mobile-app/iot-about-module.png';
 
-export const projects = [
+export const projects: Project[] = [
   {
     id: "portfolio-website", 
     title: "Modern Portfolio Website",
@@ -132,5 +133,6 @@ export const projects = [
         imageUrl: "/images/projects/ecom-transactions.jpg",
       },
     ]
-  }
+  },
+  
 ];
