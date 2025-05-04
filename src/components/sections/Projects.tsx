@@ -41,7 +41,7 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <section
       id="projects"
-      className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm"
+      className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300"
     >
       {/* Image Dialog */}
       <Dialog
@@ -61,15 +61,18 @@ export default function Projects({ projects }: ProjectsProps) {
       </Dialog>
 
       <div className="flex items-center gap-2 mb-6">
-        <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-md">
-          <Code2 className="h-5 w-5 text-blue-600 dark:text-blue-300" />
+        <div className="p-2 rounded-md">
+          <Code2 className="h-5 w-5" />
         </div>
         <h2 className="text-2xl font-bold">Projects</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <Card key={index} className="overflow-hidden">
+          <Card
+            key={index}
+            className="overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-zinc-700/50 border border-zinc-200 dark:border-zinc-700 hover:border-primary/30 dark:hover:border-primary/30"
+          >
             {project.imageUrl && (
               <div
                 className="w-full h-64 overflow-hidden cursor-pointer"

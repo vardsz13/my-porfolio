@@ -1,5 +1,6 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import {
   Dialog,
@@ -74,15 +75,16 @@ export default function CertificateDialog({
 
           {certificate.url && certificate.url !== "#" && (
             <div className="flex justify-end">
-              <a
-                href={certificate.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-3 py-1.5 text-xs bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/80 transition-colors"
-              >
-                <Eye className="mr-1.5 h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                <span className="text-xs sm:text-sm">View Certificate</span>
-              </a>
+              <Button variant="outline" size="sm" asChild className="gap-1.5">
+                <a
+                  href={certificate.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Eye className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  <span className="text-xs sm:text-sm">View</span>
+                </a>
+              </Button>
             </div>
           )}
         </div>

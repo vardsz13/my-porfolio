@@ -1,5 +1,6 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import { FaCertificate } from "react-icons/fa";
 import { CertificateItem } from "@/types/certificate";
@@ -15,12 +16,12 @@ export default function CertificateItemCard({
 }: CertificateItemCardProps) {
   return (
     <div
-      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 transition-all duration-300 cursor-pointer"
+      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-300 cursor-pointer"
       onClick={onClick}
     >
       {/* Image container - Full width on mobile, left side on larger screens */}
       {certificate.imageSrc ? (
-        <div className="w-full sm:w-auto sm:h-24 sm:w-36 flex-shrink-0 overflow-hidden rounded-md border border-zinc-200 dark:border-zinc-800">
+        <div className="w-full sm:w-auto sm:h-24 flex-shrink-0 overflow-hidden rounded-md border border-zinc-200 dark:border-zinc-800">
           <img
             src={certificate.imageSrc.toString()}
             alt={`${certificate.title} Certificate`}
@@ -62,18 +63,30 @@ export default function CertificateItemCard({
 
         {/* Mobile View Button */}
         <div className="mt-2 sm:hidden">
-          <div className="flex items-center w-full justify-center px-3 py-1.5 text-xs text-primary font-medium rounded-md border border-zinc-200 dark:border-zinc-700 hover:bg-primary hover:text-white transition-colors duration-300">
-            <Eye className="h-3 w-3 mr-1.5" />
-            <span>View Certificate</span>
+          <div className="flex items-center w-full justify-center px-3 py-1.5">
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full gap-1.5 text-xs"
+            >
+              <Eye className="h-3 w-3" />
+              <span>View Certificate</span>
+            </Button>
           </div>
         </div>
       </div>
 
       {/* View button - Only on larger screens */}
       <div className="hidden sm:flex items-center flex-shrink-0">
-        <div className="flex items-center px-3 py-1.5 text-sm text-primary font-medium rounded-md border border-zinc-200 dark:border-zinc-700 hover:bg-primary hover:text-white transition-colors duration-300">
-          <Eye className="h-3.5 w-3.5 mr-1.5" />
-          <span>View</span>
+        <div className="flex items-center ">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full gap-1.5 text-xs"
+          >
+            <Eye className="h-3 w-3" />
+            <span>View Certificate</span>
+          </Button>
         </div>
       </div>
     </div>
