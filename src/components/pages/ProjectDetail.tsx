@@ -152,12 +152,12 @@ export default function ProjectDetail() {
 
           {/* Technologies */}
           <div className="mb-6">
-            <div className="flex flex-wrap gap-2">
+            <div className=" flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <Badge
                   key={index}
                   variant="secondary"
-                  className="px-3 py-1.5 text-sm"
+                  className="px-3 py-1.5 text-sm bg-zinc-200"
                 >
                   {tech}
                 </Badge>
