@@ -8,10 +8,12 @@ import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 import { Project } from "@/types/project";
 import { handlePageTransition } from "@/utils/pageTransition";
+import ProjectModuleDialog from "@/components/ui/ProjectModuleDialog";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedModule, setSelectedModule] = useState<any | null>(null);
   const [mounted, setMounted] = useState(false);
   const navigate = useNavigate();
 
@@ -57,11 +59,14 @@ export default function ProjectDetail() {
       if (e.key === "Escape" && selectedImage) {
         setSelectedImage(null);
       }
+      if (e.key === "Escape" && selectedModule) {
+        setSelectedModule(null);
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImage]);
+  }, [selectedImage, selectedModule]);
 
   // Handle back button with transition
   const handleBackClick = (e: React.MouseEvent) => {
@@ -108,6 +113,13 @@ export default function ProjectDetail() {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Module Dialog */}
+      <ProjectModuleDialog
+        open={!!selectedModule}
+        onOpenChange={(open) => !open && setSelectedModule(null)}
+        module={selectedModule}
+      />
 
       <div className="container max-w-5xl mx-auto py-6 px-4">
         {/* Back button - smaller and on left side */}
@@ -222,25 +234,19 @@ export default function ProjectDetail() {
               {project.modules.map((module, moduleIndex) => (
                 <div
                   key={moduleIndex}
-                  className="bg-gray-50 dark:bg-zinc-700 rounded-lg p-4 transition duration-200 ease-in-out border border-transparent hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-lg"
+                  className="bg-gray-50 dark:bg-zinc-700 rounded-lg p-4 transition duration-200 ease-in-out border border-transparent hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-lg cursor-pointer"
+                  onClick={() => setSelectedModule(module)}
+                  role="button"
+                  aria-label={`View details of ${module.title}`}
+                  tabIndex={0}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && setSelectedModule(module)
+                  }
                 >
                   <div className="flex flex-col gap-3">
-                    {/* Image first - slightly smaller with max height */}
+                    {/* Image - now part of the clickable card */}
                     {module.imageUrl && (
-                      <div
-                        onClick={() =>
-                          module.imageUrl && setSelectedImage(module.imageUrl)
-                        }
-                        className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600 cursor-pointer"
-                        role="button"
-                        aria-label={`View larger image of ${module.title}`}
-                        tabIndex={0}
-                        onKeyDown={(e) =>
-                          e.key === "Enter" &&
-                          module.imageUrl &&
-                          setSelectedImage(module.imageUrl)
-                        }
-                      >
+                      <div className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
                         <img
                           src={module.imageUrl}
                           alt={module.title}
@@ -283,7 +289,6 @@ export default function ProjectDetail() {
       </div>
 
       {/* Footer with container to match content width */}
-
       <div className="container max-w-5xl mx-auto px-4">
         <Footer />
       </div>
