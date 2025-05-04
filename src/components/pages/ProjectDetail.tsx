@@ -157,7 +157,7 @@ export default function ProjectDetail() {
                 <Badge
                   key={index}
                   variant="secondary"
-                  className="px-3 py-1.5 text-sm bg-zinc-200"
+                  className="px-3 py-1.5 text-sm bg-zinc-200 dark:bg-zinc-800 "
                 >
                   {tech}
                 </Badge>
