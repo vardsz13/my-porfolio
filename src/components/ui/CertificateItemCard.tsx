@@ -16,7 +16,7 @@ export default function CertificateItemCard({
 }: CertificateItemCardProps) {
   return (
     <div
-      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 hover:border-primary/30 dark:hover:border-primary/30 transition-all duration-300 cursor-pointer"
+      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 hover:border-zinc-300 dark:hover:border-primary/30 transition-all duration-300 cursor-pointer"
       onClick={onClick}
     >
       {/* Image container - Full width on mobile, left side on larger screens */}
