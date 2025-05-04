@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { NAV_ITEMS } from "./NavigationItems";
+import { NAV_ITEMS } from "../../data/NavigationItems";
 
 interface MobileNavProps {
   closeMenu: () => void;

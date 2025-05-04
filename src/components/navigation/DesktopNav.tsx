@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { DarkModeToggle } from "../DarkModeToggle";
-import { NAV_ITEMS } from "./NavigationItems";
+import { NAV_ITEMS } from "../../data/NavigationItems";
 
 /**
  * Desktop Navigation Component
