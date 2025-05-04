@@ -12,7 +12,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     title: "Freelance UI & Front-End Developer",
-    company: "",
+    company: "Self-Employed",
     year: "2024",
     description: [
       "Designed and developed responsive websites",

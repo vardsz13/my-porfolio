@@ -79,12 +79,12 @@ export default function ProjectDetail() {
 
   // Show a minimal loading state before mounting completes
   if (!mounted) {
-    return <div className="min-h-screen bg-gray-50 dark:bg-zinc-900"></div>;
+    return <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950"></div>;
   }
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-zinc-900 flex items-center justify-center">
+      <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Project not found</h1>
           <Button onClick={handleBackClick} className="flex items-center">
@@ -95,8 +95,9 @@ export default function ProjectDetail() {
       </div>
     );
   }
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-zinc-900">
+    <div className="min-h-screen w-full bg-zinc-100 dark:bg-zinc-950 py-10 px-4">
       {/* Image Dialog - Enhanced for larger image display */}
       <Dialog
         open={!!selectedImage}
@@ -121,23 +122,23 @@ export default function ProjectDetail() {
         module={selectedModule}
       />
 
-      <div className="container max-w-5xl mx-auto py-6 px-4">
+      <div className="max-w-5xl mx-auto">
         {/* Back button - smaller and on left side */}
         <Button
           variant="ghost"
           size="sm"
           onClick={handleBackClick}
-          className="mb-4 hover:bg-gray-100 dark:hover:bg-zinc-800 flex items-center"
+          className="mb-6 hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           <span>Back to Projects</span>
         </Button>
 
-        {/* PROJECT OVERVIEW SECTION */}
+        {/* PROJECT OVERVIEW SECTION - without card styling */}
         <div className="mb-8">
           {/* Title and year badge with responsive layout */}
           <div className="flex flex-wrap items-center mb-4">
-            <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mr-3">
+            <h1 className="text-4xl font-bold text-zinc-800 dark:text-zinc-100 mr-3">
               {project.title}
             </h1>
             {project.year && (
@@ -146,7 +147,7 @@ export default function ProjectDetail() {
               </Badge>
             )}
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-3xl">
+          <p className="text-xl text-zinc-600 dark:text-zinc-300 mb-6 max-w-3xl">
             {project.description}
           </p>
 
@@ -221,20 +222,17 @@ export default function ProjectDetail() {
               </Button>
             )}
           </div>
-
-          {/* Divider line before Project Modules */}
-          <hr className="border-t border-gray-200 dark:border-gray-700 my-8" />
         </div>
 
-        {/* PROJECT MODULES SECTION */}
+        {/* PROJECT MODULES SECTION - keep this with card styling */}
         {project.modules && project.modules.length > 0 && (
-          <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-md overflow-hidden p-6 mb-6">
+          <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 mb-8">
             <h2 className="text-2xl font-bold mb-4">Project Modules</h2>
             <div className="flex flex-col gap-4">
               {project.modules.map((module, moduleIndex) => (
                 <div
                   key={moduleIndex}
-                  className="bg-gray-50 dark:bg-zinc-700 rounded-lg p-4 transition duration-200 ease-in-out border border-transparent hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-lg cursor-pointer"
+                  className="bg-zinc-50 dark:bg-zinc-800 rounded-lg p-4 transition duration-300 ease-in-out border border-transparent hover:border-zinc-300 dark:hover:border-primary/30 hover:shadow-lg dark:hover:shadow-zinc-700/50 cursor-pointer"
                   onClick={() => setSelectedModule(module)}
                   role="button"
                   aria-label={`View details of ${module.title}`}
@@ -246,7 +244,7 @@ export default function ProjectDetail() {
                   <div className="flex flex-col gap-3">
                     {/* Image - now part of the clickable card */}
                     {module.imageUrl && (
-                      <div className="w-full rounded-md overflow-hidden border border-gray-200 dark:border-gray-600">
+                      <div className="w-full rounded-md overflow-hidden border border-zinc-200 dark:border-zinc-700">
                         <img
                           src={module.imageUrl}
                           alt={module.title}
@@ -262,7 +260,7 @@ export default function ProjectDetail() {
 
                     {/* Description last */}
                     {module.description && (
-                      <p className="text-gray-600 dark:text-gray-300">
+                      <p className="text-zinc-600 dark:text-zinc-300">
                         {module.description}
                       </p>
                     )}
@@ -273,15 +271,12 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        {/* Add border line before Let's Connect section */}
-        <hr className="border-t border-zinc-200 dark:border-zinc-800 my-10" />
-
-        {/* Let's Connect section */}
-        <div className="text-left">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        {/* Let's Connect section - without card styling */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-zinc-800 dark:text-zinc-100">
             Let's Connect
           </h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-zinc-600 dark:text-zinc-300">
             Interested in discussing this project or working together? Feel free
             to reach out!
           </p>
@@ -289,9 +284,7 @@ export default function ProjectDetail() {
       </div>
 
       {/* Footer with container to match content width */}
-      <div className="container max-w-5xl mx-auto px-4">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
