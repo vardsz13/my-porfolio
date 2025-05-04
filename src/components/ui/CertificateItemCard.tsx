@@ -15,7 +15,7 @@ export default function CertificateItemCard({
 }: CertificateItemCardProps) {
   return (
     <div
-      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-800 bg-primary-foreground rounded-lg hover:shadow-md transition-all duration-300 cursor-pointer"
+      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 transition-all duration-300 cursor-pointer"
       onClick={onClick}
     >
       {/* Image container - Full width on mobile, left side on larger screens */}
@@ -37,9 +37,9 @@ export default function CertificateItemCard({
       )}
 
       {/* Content - Below image on mobile, right side on larger screens */}
-      <div className="flex-grow min-w-0 flex flex-col sm:justify-center">
+      <div className="flex-grow min-w-0  flex flex-col sm:justify-center">
         <div className="flex justify-between sm:justify-start sm:flex-row sm:items-center gap-1 mb-1 sm:mb-1.5">
-          <h3 className="font-medium text-base sm:text-lg line-clamp-1 text-zinc-900 dark:text-zinc-100">
+          <h3 className="font-semibold text-base sm:text-lg line-clamp-1 text-zinc-800 dark:text-zinc-100">
             {certificate.title}
           </h3>
           <Badge
