@@ -36,7 +36,7 @@ const Education: React.FC = () => {
             <div>
               <Badge
                 variant="outline"
-                className="bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 px-3 py-1 text-xs font-medium rounded-md"
+                className="bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 px-2 py-1 text-xs font-mono rounded-md"
               >
                 {education.period}
               </Badge>

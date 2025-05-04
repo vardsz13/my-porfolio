@@ -40,22 +40,22 @@ export default function CertificateItemCard({
       {/* Content - Below image on mobile, right side on larger screens */}
       <div className="flex-grow min-w-0  flex flex-col sm:justify-center">
         <div className="flex justify-between sm:justify-start sm:flex-row sm:items-center gap-1 mb-1 sm:mb-1.5">
-          <h3 className="font-semibold text-base sm:text-lg line-clamp-1 text-zinc-800 dark:text-zinc-100">
+          <h3 className="font-semibold text-lg sm:text-lg line-clamp-1 text-zinc-800 dark:text-zinc-100">
             {certificate.title}
           </h3>
           <Badge
             variant="outline"
-            className="whitespace-nowrap sm:ml-2 text-xs px-2 h-5 font-normal bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800"
+            className="whitespace-nowrap sm:ml-2 text-xs font-mono px-2 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800"
           >
             {certificate.year}
           </Badge>
         </div>
         <div className="flex flex-col sm:gap-1">
-          <span className="text-xs text-zinc-600 dark:text-zinc-400">
+          <span className="text-md md:text-md text-zinc-600 dark:text-zinc-400">
             {certificate.issuer}
           </span>
           {certificate.description && (
-            <p className="text-xs text-zinc-500 dark:text-zinc-500 line-clamp-2 sm:line-clamp-1">
+            <p className="text-sm md:text-sm text-zinc-500 dark:text-zinc-500 line-clamp-2 sm:line-clamp-1">
               {certificate.description}
             </p>
           )}

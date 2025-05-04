@@ -33,7 +33,7 @@ const Experience: React.FC = () => {
                   </h3>
                   <Badge
                     variant="outline"
-                    className="bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700 px-3 py-1 text-xs font-medium rounded-md shrink-0"
+                    className="text-sm font-mono px-2 py-1 border-zinc-200 dark:border-zinc-700"
                   >
                     {exp.year}
                   </Badge>

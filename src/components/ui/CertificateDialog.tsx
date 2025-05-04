@@ -42,7 +42,7 @@ export default function CertificateDialog({
                 </Badge>
               )}
             </div>
-            <DialogDescription className="text-xs text-left text-muted-foreground mt-1">
+            <DialogDescription className="text-sm text-left text-muted-foreground mt-1">
               Issued by {certificate.issuer} in {certificate.year}
             </DialogDescription>
           </div>
@@ -68,7 +68,7 @@ export default function CertificateDialog({
           )}
 
           {certificate.description && (
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm sm:text-md text-zinc-600 dark:text-zinc-400">
               {certificate.description}
             </p>
           )}

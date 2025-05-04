@@ -8,7 +8,7 @@ import Certificate from "@/components/sections/Certificates";
 import NavBar from "@/components/navigation/NavBar";
 import { Toaster } from "sonner";
 import Projects from "@/components/sections/Projects";
-import Text from "@/components/sections/Text";
+import CallToAction from "@/components/sections/CallToAction";
 import Footer from "@/components/sections/Footer";
 import { projects } from "@/data/projects"; // Import projects from data file
 
@@ -66,7 +66,7 @@ export default function App() {
 
         {/* Text Section - Call to Action */}
         <div className="mt-6">
-          <Text />
+          <CallToAction />
         </div>
       </div>
 

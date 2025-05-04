@@ -42,8 +42,8 @@ export const projects: Project[] = [
     title: "Web-based File Management System",
     description: "A comprehensive file management system built with Laravel and React for efficient document organization and sharing.",
     technologies: ["Laravel", "React", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    githubUrl: "https://github.com/yourusername/file-management",
-    liveUrl: "https://file-manager-demo.yourdomain.com",
+    githubUrl: "",
+    liveUrl: "",
     year: 2025,
     imageUrl: portfolioImage,
     modules: [
@@ -69,8 +69,8 @@ export const projects: Project[] = [
     title: "Mobile App with IoT Technologies",
     description: "A Flutter-based mobile application that integrates with IoT devices for smart home monitoring and control.",
     technologies: ["Flutter", "Dart", "C/C++", "Firebase"],
-    githubUrl: "https://github.com/yourusername/iot-app",
-    liveUrl: "https://iot-app-demo.yourdomain.com",
+    githubUrl: "",
+    liveUrl: "",
     imageUrl: iotImage,
     year: 2024,
     modules: [
@@ -111,8 +111,8 @@ export const projects: Project[] = [
     title: "E-commerce Website",
     description: "A full-featured e-commerce platform with product catalog, shopping cart, and admin dashboard.",
     technologies: ["HTML5", "CSS", "Bootstrap", "JavaScript", "PHP", "phpMyAdmin"],
-    githubUrl: "https://github.com/yourusername/ecommerce-website",
-    liveUrl: "https://ecommerce-demo.yourdomain.com",
+    githubUrl: "",
+    liveUrl: "",
     imageUrl: ecommerceImage,
     year: 2024,
     modules: [
