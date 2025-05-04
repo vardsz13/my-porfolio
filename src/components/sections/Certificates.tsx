@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SectionCard from "@/components/ui/SectionCard";
 import { FaCertificate } from "react-icons/fa";
 import CertificateItemCard from "@/components/ui/CertificateItemCard";

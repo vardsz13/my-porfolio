@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaReact,
   FaHtml5,
@@ -7,7 +6,6 @@ import {
   FaGit,
   FaPhp,
   FaTrello,
-  FaTools,
 } from "react-icons/fa";
 import {
   SiTypescript,

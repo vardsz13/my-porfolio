@@ -3,13 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaTools } from "react-icons/fa";
 import { techStack } from "@/data/techStack";
 
-// Temporary test with inline data
-const tempTechStack = {
-  "Test Category": [{ name: "Test Tech", icon: <span>🔧</span> }],
-};
-
 // Then use tempTechStack instead of imported techStack
-
 export default function TechStack() {
   console.log("TechStack data:", techStack);
   return (

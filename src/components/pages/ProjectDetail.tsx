@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
-import { Project } from "@/types/project";
 import { handlePageTransition } from "@/utils/pageTransition";
 import ProjectModuleDialog from "@/components/ui/ProjectModuleDialog";
 
