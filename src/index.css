@@ -124,3 +124,7 @@
 .page-transition-out {
   opacity: 0;
 }
+
+.shadow-highlight {
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
