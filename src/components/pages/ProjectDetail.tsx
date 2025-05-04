@@ -224,6 +224,9 @@ export default function ProjectDetail() {
           </div>
         </div>
 
+        {/* Border line separator */}
+        <div className="max-w-5xl mx-auto border-t border-zinc-200 dark:border-zinc-800 py-4"></div>
+
         {/* PROJECT MODULES SECTION - keep this with card styling */}
         {project.modules && project.modules.length > 0 && (
           <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 mb-8">
@@ -270,6 +273,9 @@ export default function ProjectDetail() {
             </div>
           </div>
         )}
+
+        {/* Border line separator */}
+        <div className="max-w-5xl mx-auto border-t border-zinc-200 dark:border-zinc-800 py-4"></div>
 
         {/* Let's Connect section - without card styling */}
         <div className="mb-8">
