@@ -41,7 +41,7 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <section
       id="projects"
-      className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300"
+      className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm hover:shadow-md dark:hover:shadow-zinc-700/"
     >
       {/* Image Dialog */}
       <Dialog
@@ -71,7 +71,7 @@ export default function Projects({ projects }: ProjectsProps) {
         {projects.map((project, index) => (
           <Card
             key={index}
-            className="overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-zinc-700/50 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-primary/30"
+            className="overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-zinc-700/50 border border-zinc-200 dark:border-zinc-700 hover:border-primary/30 dark:hover:border-primary/30"
           >
             {project.imageUrl && (
               <div
@@ -98,9 +98,12 @@ export default function Projects({ projects }: ProjectsProps) {
 
             <CardHeader>
               <div className="flex justify-between items-start">
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
                 {project.year && (
-                  <Badge variant="outline" className="text-xs font-mono">
+                  <Badge
+                    variant="outline"
+                    className="text-sm font-mono px-2.5 py-0.5"
+                  >
                     {project.year}
                   </Badge>
                 )}
