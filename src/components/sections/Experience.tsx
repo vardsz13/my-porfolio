@@ -27,13 +27,13 @@ const Experience: React.FC = () => {
               <div className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-3 border-white dark:border-zinc-900 bg-zinc-600 dark:bg-zinc-500 shadow-md z-10"></div>
 
               <div className="p-5 rounded-lg bg-white dark:bg-zinc-800 shadow border border-zinc-100 dark:border-zinc-700">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-3">
+                <div className="flex justify-between items-start gap-3 mb-3">
                   <h3 className="text-lg md:text-xl font-semibold text-zinc-800 dark:text-zinc-100">
                     {exp.title}
                   </h3>
                   <Badge
                     variant="outline"
-                    className="bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700 px-3 py-1 text-xs font-medium rounded-md"
+                    className="bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700 px-3 py-1 text-xs font-medium rounded-md shrink-0"
                   >
                     {exp.year}
                   </Badge>
