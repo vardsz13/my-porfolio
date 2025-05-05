@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ExternalLink, Github, Code2, X } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -49,13 +49,27 @@ export default function Projects({ projects }: ProjectsProps) {
         onOpenChange={(open) => !open && setSelectedImage(null)}
       >
         <DialogOverlay className="bg-black/90" />
-        <DialogContent className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0">
+        <DialogContent
+          className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0"
+          closeButton={false}
+        >
           <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
             <img
               src={selectedImage || ""}
               alt="Enlarged view"
               className="max-w-full max-h-[95vh] object-contain rounded-md shadow-2xl"
             />
+          </div>
+          <div className="absolute top-5 right-5 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setSelectedImage(null)}
+              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
+            >
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </Button>
           </div>
         </DialogContent>
       </Dialog>

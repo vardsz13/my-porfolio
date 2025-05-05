@@ -40,7 +40,7 @@ export default function ProjectModuleDialog({
             variant="ghost"
             size="icon"
             onClick={() => onOpenChange(false)}
-            className="h-9 w-9 rounded-full bg-white/90 dark:bg-zinc-700/90 hover:bg-white dark:hover:bg-zinc-700 shadow-md"
+            className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
           >
             <X className="h-5 w-5" />
             <span className="sr-only">Close</span>
