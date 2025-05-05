@@ -9,6 +9,8 @@ import iotHardwareIntegrationImage from '../assets/projects/iot-mobile-app/iot-h
 import iotContactModuleImage from '../assets/projects/iot-mobile-app/iot-contact-module.png';
 import iotAboutModuleImage from '../assets/projects/iot-mobile-app/iot-about-module.png';
 import fileManagementVideo from '../assets/videos/file-management-system-video/file-management-system.mp4';
+import ecommerceVideo from '../assets/videos/ecommerce-webiste-video/ecommerce-website.mp4'
+import iotVideo from '../assets/videos/iot-mobile-app-video/iot-mobile-app.mp4'
 
 export const projects: Project[] = [
   {
@@ -75,7 +77,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: iotImage,
-    demoVideo: "https://www.youtube.com/watch?v=yourdemo",
+    demoVideo: iotVideo,
     year: 2024,
     modules: [
       {
@@ -118,7 +120,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: ecommerceImage,
-    demoVideo: "https://www.youtube.com/watch?v=yourdemo",
+    demoVideo: ecommerceVideo,
     year: 2024,
     modules: [
       {
