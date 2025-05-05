@@ -85,7 +85,7 @@ export default function Projects({ projects }: ProjectsProps) {
         {projects.map((project, index) => (
           <Card
             key={index}
-            className="overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-zinc-700/50 border border-zinc-200 dark:border-zinc-700 hover:border-primary/30 dark:hover:border-primary/30"
+            className="overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-zinc-700/50 border border-zinc-200 dark:border-zinc-700 hover:border-primary/30 dark:hover:border-primary/30 flex flex-col"
           >
             {project.imageUrl && (
               <div
@@ -125,7 +125,7 @@ export default function Projects({ projects }: ProjectsProps) {
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="flex-grow">
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, techIndex) => (
                   <Badge
@@ -139,30 +139,37 @@ export default function Projects({ projects }: ProjectsProps) {
               </div>
             </CardContent>
 
-            <CardFooter className="flex gap-3">
-              {project.githubUrl && (
-                <Button variant="outline" size="sm" asChild>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
+            <CardFooter className="mt-auto border-t border-zinc-100 dark:border-zinc-800 pt-4">
+              <div className="flex gap-3">
+                {project.githubUrl && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="flex-shrink-0"
                   >
-                    <Github className="mr-1 h-4 w-4" />
-                    <span>Code</span>
-                  </a>
-                </Button>
-              )}
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center"
+                    >
+                      <Github className="mr-1 h-4 w-4" />
+                      <span>Code</span>
+                    </a>
+                  </Button>
+                )}
 
-              <Button
-                variant="default"
-                size="sm"
-                onClick={() => handleProjectClick(project.id)}
-                className="flex items-center"
-              >
-                <ExternalLink className="mr-1 h-4 w-4" />
-                <span>View Project</span>
-              </Button>
+                <Button
+                  variant="default"
+                  size="sm"
+                  onClick={() => handleProjectClick(project.id)}
+                  className="flex items-center flex-shrink-0"
+                >
+                  <ExternalLink className="mr-1 h-4 w-4" />
+                  <span>View Project</span>
+                </Button>
+              </div>
             </CardFooter>
           </Card>
         ))}
