@@ -146,19 +146,6 @@ export default function ProjectDetail() {
           className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0"
           closeButton={false}
         >
-          {/* Add consistent close button */}
-          <div className="absolute top-5 right-5 z-10">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsVideoOpen(false)}
-              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
-            >
-              <X className="h-5 w-5" />
-              <span className="sr-only">Close</span>
-            </Button>
-          </div>
-
           <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
             {project.demoVideo && (
               <div className="w-full aspect-video">

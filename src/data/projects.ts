@@ -75,7 +75,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: iotImage,
-    demoVideo: "https://drive.google.com/file/d/1PeruIbaNCOlZfcAT_y43f7ycK25nUobV/view?usp=sharing",
+    demoVideo: "https://drive.google.com/file/d/1PeruIbaNCOlZfcAT_y43f7ycK25nUobV/preview",
     year: 2024,
     modules: [
       {
