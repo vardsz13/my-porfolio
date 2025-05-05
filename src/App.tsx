@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
+        {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
   );
