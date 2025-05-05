@@ -48,7 +48,7 @@ export const projects: Project[] = [
     liveUrl: "",
     year: 2025,
     imageUrl: portfolioImage,
-    demoVideo: "",
+    demoVideo: "https://drive.google.com/file/d/1RRnSP17QBQwe5f6ttDoT_0hwwm4rQlx9/preview",
     modules: [
       {
         title: "User Authentication",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: ecommerceImage,
-    demoVideo: "",
+    demoVideo: "https://drive.google.com/file/d/1mNp-ROP_ZsAVlSkX-uGr9DkW77xDi_V4/preview",
     year: 2024,
     modules: [
       {
