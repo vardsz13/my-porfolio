@@ -8,6 +8,7 @@ import iotAlarmStateModuleImage from '../assets/projects/iot-mobile-app/iot-alar
 import iotHardwareIntegrationImage from '../assets/projects/iot-mobile-app/iot-hardware-integration.png';
 import iotContactModuleImage from '../assets/projects/iot-mobile-app/iot-contact-module.png';
 import iotAboutModuleImage from '../assets/projects/iot-mobile-app/iot-about-module.png';
+import fileManagementImage from '../assets/projects/file-management-system/file-management-system.png';
 
 
 export const projects: Project[] = [
@@ -47,7 +48,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     year: 2025,
-    imageUrl: portfolioImage,
+    imageUrl: fileManagementImage,
     promoVideo: "https://drive.google.com/file/d/1RRnSP17QBQwe5f6ttDoT_0hwwm4rQlx9/preview",
     modules: [
       {
