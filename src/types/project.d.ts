@@ -12,7 +12,7 @@ export interface ProjectModule {
     githubUrl?: string;
     liveUrl?: string;
     imageUrl?: string;
-    demoVideo?: string;
+    promoVideo?: string;
     modules?: ProjectModule[];
     year?: number;
   }

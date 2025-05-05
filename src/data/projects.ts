@@ -19,7 +19,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/portfolio",
     liveUrl: "https://yourportfolio.com",
     imageUrl: portfolioImage,
-    demoVideo: "https://www.youtube.com/watch?v=yourdemo",
+    promoVideo: "https://www.youtube.com/watch?v=yourdemo",
     year: 2025,
     modules: [
       {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     liveUrl: "",
     year: 2025,
     imageUrl: portfolioImage,
-    demoVideo: "https://drive.google.com/file/d/1RRnSP17QBQwe5f6ttDoT_0hwwm4rQlx9/preview",
+    promoVideo: "https://drive.google.com/file/d/1RRnSP17QBQwe5f6ttDoT_0hwwm4rQlx9/preview",
     modules: [
       {
         title: "User Authentication",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: iotImage,
-    demoVideo: "https://drive.google.com/file/d/1PeruIbaNCOlZfcAT_y43f7ycK25nUobV/preview",
+    promoVideo: "https://drive.google.com/file/d/1PeruIbaNCOlZfcAT_y43f7ycK25nUobV/preview",
     year: 2024,
     modules: [
       {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: ecommerceImage,
-    demoVideo: "https://drive.google.com/file/d/1mNp-ROP_ZsAVlSkX-uGr9DkW77xDi_V4/preview",
+    promoVideo: "https://drive.google.com/file/d/1mNp-ROP_ZsAVlSkX-uGr9DkW77xDi_V4/preview",
     year: 2024,
     modules: [
       {

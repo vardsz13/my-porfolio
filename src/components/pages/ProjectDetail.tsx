@@ -147,10 +147,10 @@ export default function ProjectDetail() {
           closeButton={false}
         >
           <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
-            {project.demoVideo && (
+            {project.promoVideo && (
               <div className="w-full aspect-video">
                 <iframe
-                  src={project.demoVideo}
+                  src={project.promoVideo}
                   title={`${project.title} Demo Video`}
                   className="w-full h-full rounded-md shadow-2xl"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -269,8 +269,8 @@ export default function ProjectDetail() {
               </Button>
             )}
 
-            {/* Demo Video Button */}
-            {project.demoVideo && (
+            {/* Promo Video Button */}
+            {project.promoVideo && (
               <Button
                 variant="default"
                 size="lg"
@@ -278,7 +278,7 @@ export default function ProjectDetail() {
                 className="bg-purple-600 hover:bg-purple-700 dark:text-secondary-foreground"
               >
                 <Play className="mr-2 h-5 w-5" />
-                <span>Watch Demo</span>
+                <span>Watch Video</span>
               </Button>
             )}
           </div>
