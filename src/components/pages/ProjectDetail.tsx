@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Play, X } from "lucide-react";
 import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 import { handlePageTransition } from "@/utils/pageTransition";
@@ -13,6 +13,7 @@ export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedModule, setSelectedModule] = useState<any | null>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const navigate = useNavigate();
 
@@ -61,11 +62,14 @@ export default function ProjectDetail() {
       if (e.key === "Escape" && selectedModule) {
         setSelectedModule(null);
       }
+      if (e.key === "Escape" && isVideoOpen) {
+        setIsVideoOpen(false);
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImage, selectedModule]);
+  }, [selectedImage, selectedModule, isVideoOpen]);
 
   // Handle back button with transition
   const handleBackClick = (e: React.MouseEvent) => {
@@ -103,13 +107,70 @@ export default function ProjectDetail() {
         onOpenChange={(open) => !open && setSelectedImage(null)}
       >
         <DialogOverlay className="bg-black/90" />
-        <DialogContent className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0">
+        <DialogContent
+          className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0"
+          closeButton={false}
+        >
+          {/* Add consistent close button */}
+          <div className="absolute top-5 right-5 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setSelectedImage(null)}
+              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
+            >
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </Button>
+          </div>
+
           <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
             <img
               src={selectedImage || ""}
               alt="Enlarged view"
               className="max-w-full max-h-[95vh] object-contain rounded-md shadow-2xl"
             />
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Video Dialog */}
+      <Dialog
+        open={isVideoOpen}
+        onOpenChange={(open) => {
+          if (!open) setIsVideoOpen(false);
+        }}
+      >
+        <DialogOverlay className="bg-black/90" />
+        <DialogContent
+          className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0"
+          closeButton={false}
+        >
+          {/* Add consistent close button */}
+          <div className="absolute top-5 right-5 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsVideoOpen(false)}
+              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
+            >
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </Button>
+          </div>
+
+          <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
+            {project.demoVideo && (
+              <div className="w-full aspect-video">
+                <iframe
+                  src={project.demoVideo}
+                  title={`${project.title} Demo Video`}
+                  className="w-full h-full rounded-md shadow-2xl"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
           </div>
         </DialogContent>
       </Dialog>
@@ -218,6 +279,19 @@ export default function ProjectDetail() {
                   <ExternalLink className="mr-2 h-5 w-5" />
                   <span>Visit Live Site</span>
                 </a>
+              </Button>
+            )}
+
+            {/* Demo Video Button */}
+            {project.demoVideo && (
+              <Button
+                variant="default"
+                size="lg"
+                onClick={() => setIsVideoOpen(true)}
+                className="bg-purple-600 hover:bg-purple-700 dark:text-secondary-foreground"
+              >
+                <Play className="mr-2 h-5 w-5" />
+                <span>Watch Demo</span>
               </Button>
             )}
           </div>

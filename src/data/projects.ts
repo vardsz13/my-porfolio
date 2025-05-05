@@ -8,6 +8,7 @@ import iotAlarmStateModuleImage from '../assets/projects/iot-mobile-app/iot-alar
 import iotHardwareIntegrationImage from '../assets/projects/iot-mobile-app/iot-hardware-integration.png';
 import iotContactModuleImage from '../assets/projects/iot-mobile-app/iot-contact-module.png';
 import iotAboutModuleImage from '../assets/projects/iot-mobile-app/iot-about-module.png';
+import fileManagementVideo from '../assets/videos/file-management-system-video/file-management-system.mp4';
 
 export const projects: Project[] = [
   {
@@ -18,6 +19,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/yourusername/portfolio",
     liveUrl: "https://yourportfolio.com",
     imageUrl: portfolioImage,
+    demoVideo: "https://www.youtube.com/watch?v=yourdemo",
     year: 2025,
     modules: [
       {
@@ -46,6 +48,7 @@ export const projects: Project[] = [
     liveUrl: "",
     year: 2025,
     imageUrl: portfolioImage,
+    demoVideo: fileManagementVideo,
     modules: [
       {
         title: "User Authentication",
@@ -72,6 +75,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: iotImage,
+    demoVideo: "https://www.youtube.com/watch?v=yourdemo",
     year: 2024,
     modules: [
       {
@@ -114,6 +118,7 @@ export const projects: Project[] = [
     githubUrl: "",
     liveUrl: "",
     imageUrl: ecommerceImage,
+    demoVideo: "https://www.youtube.com/watch?v=yourdemo",
     year: 2024,
     modules: [
       {

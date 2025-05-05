@@ -12,6 +12,7 @@ export interface ProjectModule {
     githubUrl?: string;
     liveUrl?: string;
     imageUrl?: string;
+    demoVideo?: string;
     modules?: ProjectModule[];
     year?: number;
   }
