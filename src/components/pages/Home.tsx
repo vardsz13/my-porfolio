@@ -11,8 +11,10 @@ import Projects from "@/components/sections/Projects";
 import CallToAction from "@/components/sections/CallToAction";
 import Footer from "@/components/sections/Footer";
 import { projects } from "@/data/projects"; // Import projects from data file
+import useDocumentTitle from "@/utils/useDocumentTitle";
 
 export default function App() {
+  useDocumentTitle(""); // Use an empty string to get the default title
   return (
     <div className="min-h-screen w-full bg-zinc-100 dark:bg-zinc-950 py-10 px-4">
       {/* Navigation Bar */}

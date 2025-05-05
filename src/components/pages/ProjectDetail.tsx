@@ -8,6 +8,7 @@ import Footer from "@/components/sections/Footer";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 import { handlePageTransition } from "@/utils/pageTransition";
 import ProjectModuleDialog from "@/components/ui/ProjectModuleDialog";
+import useDocumentTitle from "@/utils/useDocumentTitle";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -19,6 +20,9 @@ export default function ProjectDetail() {
 
   // Find the project by ID
   const project = projects.find((p) => p.id === id);
+
+  // Set document title based on project title
+  useDocumentTitle(project ? project.title : "Project Not Found");
 
   // Handle theme persistence on mount
   useEffect(() => {
