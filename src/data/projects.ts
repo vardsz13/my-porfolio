@@ -1,5 +1,10 @@
 import { Project } from '@/types/project';
 import portfolioImage from '../assets/projects/porfolio-website/portfolio-website.png';
+import portfolioResponmsiveImage from '../assets/projects/porfolio-website/portfolio-responsive-design.png';
+import portfolioDarkModeImage from '../assets/projects/porfolio-website/portfolio-dark-light-mode.png';
+import portfolioTransitionsImage from '../assets/projects/porfolio-website/portfolio-page-transitions.png';
+import portfolioContactImage from '../assets/projects/porfolio-website/portfolio-contact-form.png';
+import portfolioInteractiveImage from '../assets/projects/porfolio-website/portfolio-interactive-elements.png';
 import ecommerceImage from '../assets/projects/ecommerce-website/ecommerce-website.png';
 import iotImage from '../assets/projects/iot-mobile-app/iot-mobile-app.png';
 import iotHomeModuleImage from '../assets/projects/iot-mobile-app/iot-home-module.png';
@@ -26,27 +31,27 @@ export const projects: Project[] = [
       {
         title: "Responsive Design",
         description: "Created a website that looks great on all devices from phones to desktops, with easy navigation and readable content no matter the screen size.",
-        imageUrl: portfolioImage,
+        imageUrl: portfolioResponmsiveImage,
       },
       {
         title: "Dark/Light Mode",
         description: "Added a simple switch that lets users choose between dark and light themes, which remembers their preference for future visits.",
-        imageUrl: portfolioImage,
+        imageUrl: portfolioDarkModeImage,
       },
       {
         title: "Page Transitions",
         description: "Incorporated smooth animated transitions between pages that make browsing the website feel polished and professional.",
-        imageUrl: portfolioImage,
+        imageUrl: portfolioTransitionsImage,
       },
       {
         title: "Contact Form",
         description: "Implemented an easy-to-use contact section where potential employers can reach out directly through the website with form validation and confirmation messages.",
-        imageUrl: portfolioImage,
+        imageUrl: portfolioContactImage,
       },
       {
         title: "Interactive Elements",
         description: "Built engaging components that respond to user actions, making the website feel more dynamic and modern while highlighting my technical skills.",
-        imageUrl: portfolioImage,
+        imageUrl: portfolioInteractiveImage,
       },
     ]
   },
