@@ -22,10 +22,10 @@ export const projects: Project[] = [
     title: "Modern Portfolio Website",
     description: "My personal website that showcases my work, skills, and experience in an interactive and visually appealing way. It adjusts perfectly to any device (phone, tablet, or computer) and includes a user-friendly light/dark mode toggle for comfortable viewing.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/vardsz13/portfolio",
-    liveUrl: "https://jp-varde.vercel.app",
+    githubUrl: "",
+    liveUrl: "https://john-paul-varde-porfolio.vercel.app",
     imageUrl: portfolioImage,
-    promoVideo: "https://www.youtube.com/watch?v=yourdemo",
+    promoVideo: "https://drive.google.com/file/d/1ob9vIuHF1luNTIZTWLQiKxwCILRn9EVN/preview",
     year: 2025,
     modules: [
       {
