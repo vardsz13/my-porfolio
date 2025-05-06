@@ -15,27 +15,37 @@ export const projects: Project[] = [
   {
     id: "portfolio-website", 
     title: "Modern Portfolio Website",
-    description: "A responsive portfolio website built with React, TypeScript, and Tailwind CSS showcasing my projects and skills.",
+    description: "My personal website that showcases my work, skills, and experience in an interactive and visually appealing way. It adjusts perfectly to any device (phone, tablet, or computer) and includes a user-friendly light/dark mode toggle for comfortable viewing.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/yourusername/portfolio",
-    liveUrl: "https://yourportfolio.com",
+    githubUrl: "https://github.com/vardsz13/portfolio",
+    liveUrl: "https://jp-varde.vercel.app",
     imageUrl: portfolioImage,
     promoVideo: "https://www.youtube.com/watch?v=yourdemo",
     year: 2025,
     modules: [
       {
         title: "Responsive Design",
-        description: "Implemented responsive layouts that work seamlessly across all device sizes.",
+        description: "Created a website that looks great on all devices from phones to desktops, with easy navigation and readable content no matter the screen size.",
         imageUrl: portfolioImage,
       },
       {
         title: "Dark/Light Mode",
-        description: "Added theme switching functionality with persistent user preferences.",
+        description: "Added a simple switch that lets users choose between dark and light themes, which remembers their preference for future visits.",
         imageUrl: portfolioImage,
       },
       {
-        title: "Interactive Sections",
-        description: "Created engaging interactive elements like animated skill bars and project showcases.",
+        title: "Page Transitions",
+        description: "Incorporated smooth animated transitions between pages that make browsing the website feel polished and professional.",
+        imageUrl: portfolioImage,
+      },
+      {
+        title: "Contact Form",
+        description: "Implemented an easy-to-use contact section where potential employers can reach out directly through the website with form validation and confirmation messages.",
+        imageUrl: portfolioImage,
+      },
+      {
+        title: "Interactive Elements",
+        description: "Built engaging components that respond to user actions, making the website feel more dynamic and modern while highlighting my technical skills.",
         imageUrl: portfolioImage,
       },
     ]
