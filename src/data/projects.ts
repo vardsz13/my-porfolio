@@ -6,6 +6,19 @@ import portfolioTransitionsImage from '../assets/projects/porfolio-website/portf
 import portfolioContactImage from '../assets/projects/porfolio-website/portfolio-contact-form.png';
 import portfolioInteractiveImage from '../assets/projects/porfolio-website/portfolio-interactive-elements.png';
 import ecommerceImage from '../assets/projects/ecommerce-website/ecommerce-website.png';
+import ecommerceHomeImage from '../assets/projects/ecommerce-website/ecommerce-featured.png';
+import ecommerceProductsImage from '../assets/projects/ecommerce-website/ecommerce-items.png';
+import ecommerceContactImage from '../assets/projects/ecommerce-website/ecommerce-contact-module.png';
+import ecommerceAboutImage from '../assets/projects/ecommerce-website/ecommerce-about-us-module.png';
+import ecommerceCartImage from '../assets/projects/ecommerce-website/ecommerce-cart.png';
+import ecommerceOrderSummaryImage from '../assets/projects/ecommerce-website/ecommerce-summary-orders.png';
+import ecommerceAdminImage from '../assets/projects/ecommerce-website/ecommerce-admin.png';
+import ecommerceDashboardImage from '../assets/projects/ecommerce-website/ecommerce-dashboard.png';
+import ecommerceProductManagementImage from '../assets/projects/ecommerce-website/ecommerce-product-management.png';
+import ecommerceTransactionManagementImage from '../assets/projects/ecommerce-website/ecommerce-transaction-management.png';
+import ecommerceAdminContactImage from '../assets/projects/ecommerce-website/ecommerce-admin-contact.png';
+import ecommerceOrderReportsImage from '../assets/projects/ecommerce-website/ecommerce-order-reports.png';
+
 import iotImage from '../assets/projects/iot-mobile-app/iot-mobile-app.png';
 import iotHomeModuleImage from '../assets/projects/iot-mobile-app/iot-home-module.png';
 import iotSensorModuleImage from '../assets/projects/iot-mobile-app/iot-sensor-module.png'; 
@@ -129,7 +142,7 @@ export const projects: Project[] = [
   {
     id: "ecommerce-website",
     title: "E-commerce Website",
-    description: "A full-featured e-commerce platform with product catalog, shopping cart, and admin dashboard.",
+    description: "The E-commerce Project is a user-friendly online store designed to make shopping for shoes, apparel, and accessories easy and enjoyable. The website helps customers feel confident making purchases and managing their orders.",
     technologies: ["HTML5", "CSS", "Bootstrap", "JavaScript", "PHP", "phpMyAdmin"],
     githubUrl: "",
     liveUrl: "",
@@ -138,24 +151,64 @@ export const projects: Project[] = [
     year: 2024,
     modules: [
       {
-        title: "Product Catalog",
-        description: "Comprehensive product listing with categories, filters, and search functionality.",
-        imageUrl: "/images/projects/ecom-products.jpg",
+        title: "Home Module",
+        description: "The main page where customers can easily browse all available products and see featured items.",
+        imageUrl: ecommerceHomeImage,
       },
       {
-        title: "Shopping Cart",
-        description: "Intuitive cart system with product management and checkout process.",
+        title: "Product Module",
+        description: "Shop for shoes, clothes, and accessories. Products are grouped by type so customers can quickly find what they want.",
+        imageUrl: ecommerceProductsImage,
+      },
+      {
+        title: "Contact Us",
+        description: "A simple form where customers can send questions or messages directly to the company. Also shows the company's location on a map so customers know where to find the company.",
+        imageUrl: ecommerceContactImage,
+      },
+      {
+        title: "About Us",
+        description: "Learn about the company's history, mission, and values.",
+        imageUrl: ecommerceAboutImage,
+      },
+      {
+        title: "Cart Module",
+        description: "Customers can add, remove, or update items in their shopping cart before checking out.",
+        imageUrl: ecommerceCartImage,
+      },
+       {
+        title: "Order Summary",
+        description: "Shows a clear summary of what the customer is about to order before they finish buying.",
+        imageUrl: ecommerceOrderSummaryImage,
+      },
+       {
+        title: "Admin Portal",
+        description: "A secure area for staff to manage products, orders, and customer information.",
         imageUrl: "/images/projects/ecom-cart.jpg",
       },
-      {
-        title: "Admin Dashboard",
-        description: "Complete admin interface for managing products, orders, customers, and store analytics.",
-        imageUrl: "/images/projects/ecom-admin.jpg",
+       {
+        title: "Dashboard",
+        description: "Gives admins a quick overview of sales and product performance with easy-to-read charts.",
+        imageUrl: "/images/projects/ecom-cart.jpg",
       },
-      {
-        title: "Transaction System",
-        description: "Secure order processing with receipt generation and transaction history.",
-        imageUrl: "/images/projects/ecom-transactions.jpg",
+       {
+        title: "Product Management",
+        description: "Admins can add, edit, or update products and keep stock levels accurate.",
+        imageUrl: "/images/projects/ecom-cart.jpg",
+      },
+       {
+        title: "Transaction Management",
+        description: "Admins can view, confirm, or cancel orders to keep everything running smoothly.",
+        imageUrl: "/images/projects/ecom-cart.jpg",
+      },
+       {
+        title: "Admin Contact",
+        description: "Admins can see and respond to customer messages sent through the contact form.",
+        imageUrl: "/images/projects/ecom-cart.jpg",
+      },
+       {
+        title: "Order Reports",
+        description: "Admins can track sales and revenue with easy-to-understand reports.",
+        imageUrl: "/images/projects/ecom-cart.jpg",
       },
     ]
   },
