@@ -30,6 +30,26 @@ import iotContactModuleImage from '../assets/projects/iot-mobile-app/iot-contact
 import iotAboutModuleImage from '../assets/projects/iot-mobile-app/iot-about-module.png';
 // File Management System Capstone Project
 import fileManagementImage from '../assets/projects/file-management-system/file-management-system.png';
+import fileUserLoginImage from '../assets/projects/file-management-system/file-user-login.png';
+import fileFilesModuleImage from '../assets/projects/file-management-system/file-myfiles-module.png';
+import fileTemplatesImage from '../assets/projects/file-management-system/file-templates-module.png';
+import fileMailImage from '../assets/projects/file-management-system/file-mail-module.png';
+import fileStarredImage from '../assets/projects/file-management-system/file-starred-module.png';
+import fileAuditTrailImage from '../assets/projects/file-management-system/file-audit-trail-module.png';
+import fileTrashImage from '../assets/projects/file-management-system/file-trash-module.png';
+import fileHelpSupportImage from '../assets/projects/file-management-system/file-help-support-module.png';
+import fileOCRImage from '../assets/projects/file-management-system/file-ocr.png';
+import fileVersionControlImage from '../assets/projects/file-management-system/file-version-control.png';
+import fileAnnotationImage from '../assets/projects/file-management-system/file-annotation.png';
+import fileAdvanceSearchImage from '../assets/projects/file-management-system/file-advance-search.png';
+import fileAdminDashboardImage from '../assets/projects/file-management-system/file-admin-dashboard.png';
+import fileUserManagementImage from '../assets/projects/file-management-system/file-admin-user-management.png';
+import fileDepartmentManagementImage from '../assets/projects/file-management-system/file-admin-departments.png';
+import fileRoleManagementImage from '../assets/projects/file-management-system/file-admin-role-management.png';
+import fileAdminAuditTrailImage from '../assets/projects/file-management-system/file-admin-audit-trail.png';
+import fileIssueManagementImage from '../assets/projects/file-management-system/file-admin-issues-management.png';
+
+
 
 
 export const projects: Project[] = [
@@ -85,19 +105,94 @@ export const projects: Project[] = [
     promoVideo: "https://drive.google.com/file/d/1RRnSP17QBQwe5f6ttDoT_0hwwm4rQlx9/preview",
     modules: [
       {
-        title: "User Authentication",
-        description: "Secure user authentication system with role-based access control.",
-        imageUrl: "/images/projects/file-auth.jpg",
+        title: "User Login",
+        description: "Allows users to store, organize, and access all their personal files in one place.",
+        imageUrl: fileUserLoginImage,
       },
       {
-        title: "File Organization",
+        title: "Files Module",
         description: "Intuitive file organization with folders, tags, and advanced search capabilities.",
-        imageUrl: "/images/projects/file-organization.jpg",
+        imageUrl: fileFilesModuleImage,
       },
       {
-        title: "Sharing & Collaboration",
-        description: "Advanced file sharing options with permission controls and collaboration features.",
-        imageUrl: "/images/projects/file-sharing.jpg",
+        title: "Template Module:",
+        description: " Provides users with ready-made templates to help them quickly create new documents.",
+        imageUrl: fileTemplatesImage,
+      },
+      { 
+        title: "Mail Module",
+        description: "A built-in email system for sending and receiving files directly within the application.",
+        imageUrl: fileMailImage,
+      },
+      {
+        title: "Starred Module",
+        description: "Allows users to mark important files for quick access, making it easy to find frequently used documents.",
+        imageUrl: fileStarredImage,
+      },
+      {
+        title: "Audit Trail Module",
+        description: "Tracks all user actions and file changes, providing a complete history for security and compliance.",
+        imageUrl: fileAuditTrailImage,
+      },
+      {
+        title: "Trash Module",
+        description: "A secure area for deleted files, allowing users to recover items before permanent deletion.",
+        imageUrl: fileTrashImage,
+      },
+      {
+        title: "Help and Support Module",
+        description: "Offers guides and a way for users to contact support if they need assistance.",
+        imageUrl: fileHelpSupportImage,
+      },
+      {
+        title: "OCR Module",
+        description: "Optical Character Recognition (OCR) for converting scanned documents into editable text.",
+        imageUrl: fileOCRImage,
+      },
+      {
+        title: "Version Control Module",
+        description: "Allows users to track changes in documents and revert to previous versions if needed.",
+        imageUrl: fileVersionControlImage,
+      },
+      {
+        title: "Annotation Module",
+        description: "Enables users to add comments and annotations to files for better collaboration.",
+        imageUrl: fileAnnotationImage,
+      },
+      {
+        title: "Advance Search Module",
+        description: "Helps users quickly find files using keywords, filters, or other criteria.",
+        imageUrl: fileAdvanceSearchImage,
+      },
+      {
+        title: "Admin Dashboard",
+        description: " Provides administrators with an overview of system activity and key statistics.",
+        imageUrl: fileAdminDashboardImage,
+      },
+      {
+        title: "User Management Module",
+        description: "Enables administrators to add, remove, or update user accounts and permissions.",
+        imageUrl: fileUserManagementImage,
+      },
+      {
+        title: "Department Management Module",
+        description: "Organizes users into departments for better structure and access control.",
+        imageUrl: fileDepartmentManagementImage,
+      },
+      {
+        title: "Role Management Module",
+        description: "Allows administrators to assign different roles to users, controlling what they can do.",
+        imageUrl: fileRoleManagementImage,
+      },
+      {
+        title: "Admin Audit Trail Module",
+        description: "Displays a detailed log of all admin actions for security and accountability.",
+        imageUrl: fileAdminAuditTrailImage,
+      },
+      {
+        title: "Issue Management Module",
+        description: "Enables administrators to track, manage, and resolve user-reported problems.",
+        imageUrl: fileIssueManagementImage,
       },
     ]
   },
