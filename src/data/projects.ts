@@ -48,8 +48,14 @@ import fileDepartmentManagementImage from '../assets/projects/file-management-sy
 import fileRoleManagementImage from '../assets/projects/file-management-system/file-admin-role-management.png';
 import fileAdminAuditTrailImage from '../assets/projects/file-management-system/file-admin-audit-trail.png';
 import fileIssueManagementImage from '../assets/projects/file-management-system/file-admin-issues-management.png';
-
-
+// Emergency Response Mobile Design Project
+import emergencyResponseImage from '../assets/projects/emergency-response-mobile-design/emergency-response-mobile-design.png';
+import emergencyResponseDesign1Image from '../assets/projects/emergency-response-mobile-design/emergency-response-mobile-design-01.png';
+import emergencyResponseDesign2Image from '../assets/projects/emergency-response-mobile-design/emergency-response-mobile-design-02.png';
+// Wine Explorer Mobile Design Project
+import wineExplorerImage from '../assets/projects/wine-explorer-mobile-design/wine-mobile-ui-design.png';
+import wineExplorerDesign1Image from '../assets/projects/wine-explorer-mobile-design/wine-mobile-design-01.png';
+import wineExplorerDesign2Image from '../assets/projects/wine-explorer-mobile-design/wine-mobile-design-02.png';
 
 
 export const projects: Project[] = [
@@ -311,6 +317,53 @@ export const projects: Project[] = [
         title: "Order Reports",
         description: "Admins can easily see sales and earnings through simple, clear reports.",
         imageUrl: ecommerceOrderReportsImage,
+      },
+    ]
+  },
+  // Emergency Response Mobile Design Project
+    {
+    id: "emergency-response-mobile-design",
+    title: "Emergency Response App – UI/UX Case Study",
+    description: "A mobile app designed to provide quick access to emergency services with a user-friendly interface. Focused on intuitive navigation and accessibility.",
+    technologies: ["Figma"],
+    githubUrl: "",
+    liveUrl: "https://www.figma.com/proto/OHwg2i2e89GvQGvxZ2DVLu/911--Emergency-App-?node-id=13-467&p=f&t=ZUtzBgvroeRuEgdR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=13%3A467",
+    imageUrl: emergencyResponseImage,
+    promoVideo: "",
+    year: 2024,
+    modules: [
+      {
+        title: "Main Access Screen",
+        description: "A minimal and high-contrast interface displaying essential options like “Sign In”, “Sign Up”, and “Home”. Designed for quick user orientation and fast navigation during emergencies.",
+        imageUrl: emergencyResponseDesign1Image,
+      },
+      {
+        title: "Live Assistance Screen",
+        description: "This screen helps users during emergencies by first showing a “please wait” message while connecting them to help, then showing their current location on a live map, and finally allowing them to chat directly with responders through a clear and easy-to-read message screen with quick reply options.",
+        imageUrl: emergencyResponseDesign2Image,
+      },
+    ]
+  },
+      {
+    id: "wine-explorer-mobile-design",
+    title: "Wine Explorer App – UI/UX Case Study",
+    description: "A mobile ecommerce app for discovering, browsing, and purchasing wines. Emphasizes elegant design and intuitive user experience for wine enthusiasts.",
+    technologies: ["Figma"],
+    githubUrl: "",
+    liveUrl: "https://www.figma.com/proto/0pKquvfffoXGaMMbpV4ILZ/GRANDE-VINTAGE--WINE-?node-id=1-504&p=f&t=Be2mNY40GPFeaJa0-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A483",
+    imageUrl: wineExplorerImage,
+    promoVideo: "",
+    year: 2024,
+    modules: [
+      {
+        title: "Home & Access Screen",
+        description: "This screen includes Sign Up, Login, and the Home Page. It gives users an easy start by letting them create an account, log in, and explore wines right from the homepage all designed with a clean and welcoming layout.",
+        imageUrl: wineExplorerDesign1Image,
+      },
+      {
+        title: "Info & Cart Screen",
+        description: "This screen allows users to view the wines they’ve added to their cart, learn about the company’s background through the Company History section, and easily reach out through the Contact Us page. It’s designed to keep things smooth and informative while shopping or getting in touch.",
+        imageUrl: wineExplorerDesign2Image,
       },
     ]
   },
