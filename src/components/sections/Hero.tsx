@@ -39,7 +39,7 @@ export default function Hero() {
         <p className="text-xl mb-3">{heroData.title}</p>
         <div className="flex gap-2 justify-center md:justify-start">
           <a
-            href="/resume/Varde,John Paul.pdf"
+            href="/resume/Resume_Varde,John Paul.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 px-4 py-2 rounded-md flex items-center gap-2 transition-all duration-300 hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:shadow-md"
