@@ -1,6 +1,7 @@
 import projectManagementCert from "@/assets/certificates/ProjectManagementCert.png";
 import pythonCert from "@/assets/certificates/PythonCert.jpg";
 import currentTrendsCert from "@/assets/certificates/CurrentTrendsCert.png";
+import dataAnalyticsCert from "@/assets/certificates/DataAnalyticsCert.jpg";
 import { CertificateItem } from "@/types/certificate";
 
 export const certificates: CertificateItem[] = [
@@ -13,15 +14,15 @@ export const certificates: CertificateItem[] = [
     description:
       "Comprehensive training on project management methodologies and practices.",
   },
-  {
-    title: "Master Laravel 12 & PHP 2025",
-    issuer: "Udemy",
-    year: "2025",
-    url: "https://www.udemy.com/certificate/UC-XXXX/",
-    imageSrc: projectManagementCert,
-    description:
-      "Advanced course covering Laravel 12 framework and PHP development.",
-  },
+  // {
+  //   title: "Master Laravel 12 & PHP 2025",
+  //   issuer: "Udemy",
+  //   year: "2025",
+  //   url: "https://www.udemy.com/certificate/UC-XXXX/",
+  //   imageSrc: projectManagementCert,
+  //   description:
+  //     "Advanced course covering Laravel 12 framework and PHP development.",
+  // },
 //   {
 //     title: "React - The Complete Guide",
 //     issuer: "Udemy",
@@ -56,5 +57,14 @@ export const certificates: CertificateItem[] = [
     imageSrc: pythonCert,
     description:
       "Applied Python programming techniques for real-world applications.",
+  },
+  {
+    title: "Data Analytics 2024",
+    issuer: "Unit 703 Parc House II, Makati City",
+    year: "2024",
+    url: "#",
+    imageSrc: dataAnalyticsCert,
+    description:
+      "Foundational course in data analytics, covering data manipulation and visualization techniques.",
   },
 ];
