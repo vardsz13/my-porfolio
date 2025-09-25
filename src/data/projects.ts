@@ -56,9 +56,87 @@ import emergencyResponseDesign2Image from '../assets/projects/emergency-response
 import wineExplorerImage from '../assets/projects/wine-explorer-mobile-design/wine-mobile-ui-design.png';
 import wineExplorerDesign1Image from '../assets/projects/wine-explorer-mobile-design/wine-mobile-design-01.png';
 import wineExplorerDesign2Image from '../assets/projects/wine-explorer-mobile-design/wine-mobile-design-02.png';
+// Webtechh Website
+import webtechCoverPage from '../assets/projects/webtech-website/webtech-cover.png'
+import webtechHomePage from '../assets/projects/webtech-website/webtech-home-page.png';
+import webtechProjectPage from '../assets/projects/webtech-website/webtech-project-page.png'
+import webtechContactPage from '../assets/projects/webtech-website/webtech-contact-page.png'
+import webtechAdminDashboard from '../assets/projects/webtech-website/webtech-admin-dashboard.png'
+import webtechAdminInbox from '../assets/projects/webtech-website/webtech-admin-inbox.png'
+import webtechAdminUser from '../assets/projects/webtech-website/webtech-admin-user.png'
+import webtechAdminProject from '../assets/projects/webtech-website/webtech-admin-project.png'
+
+
+
+
 
 
 export const projects: Project[] = [
+
+   // WebTech Buddie Project
+  {
+    id: "webtechhh-buddie",
+    title: "WebTech Buddie",
+    description:
+      "A modern, clean, and professional web platform for showcasing company services, projects, and managing client interactions. Features a responsive user side and a robust admin dashboard for project, inbox, and user management.",
+    technologies: [
+      "Laravel",
+      "Blade",
+      "PHP",
+      "Tailwind CSS",
+      "JavaScript",
+      "MySQL"
+    ],
+    githubUrl: "https://github.com/louiesumayan/WebTechBuddie.git",
+    liveUrl: "https://webtechbuddie.site/",
+    imageUrl: webtechCoverPage, 
+    promoVideo: "",
+    year: 2025,
+    modules: [
+      {
+        title: "User Side: Home Page",
+        description:
+          "Landing page with company mission, values, services, testimonials, and a contact form. Responsive layout with device-mockup style project showcase. [https://www.facebook.com/webtechbuddie]",
+        imageUrl: webtechHomePage,
+      },
+      {
+        title: "User Side: Projects Page",
+        description:
+          "Displays all active projects with images and details. Visually appealing and fully responsive.",
+        imageUrl: webtechProjectPage,
+      },
+      {
+        title: "User Side: Contact Form",
+        description:
+          "Users can send messages to the admin with validation and CSRF protection. Messages are delivered to the admin inbox.",
+        imageUrl: webtechContactPage,
+      },
+      {
+        title: "Admin Side: Dashboard",
+        description:
+          "Overview panel with summary info (projects, users, messages) and sidebar navigation. Content switching via route-based includes.",
+        imageUrl: webtechAdminDashboard,
+      },
+      {
+        title: "Admin Side: Projects Management",
+        description:
+          "Table listing of all projects with pagination, create/edit/delete functionality, image upload, and status indicators.",
+        imageUrl: webtechAdminProject,
+      },
+      {
+        title: "Admin Side: Inbox",
+        description:
+          "Table and card view of all contact messages. Modal for reading messages, mark as read, reply via mailto, and delete options.",
+        imageUrl: webtechAdminInbox,
+      },
+      {
+        title: "Admin Side: User Management",
+        description:
+          "Table of users with create/edit/delete, role assignment (admin/user), and modal forms for user management.",
+        imageUrl: webtechAdminUser,
+      },
+    ],
+  },
   // Portfolio Project
   {
     id: "portfolio-website", 
@@ -344,6 +422,7 @@ export const projects: Project[] = [
       },
     ]
   },
+   // Wine Explorer Mobile Design Project
       {
     id: "wine-explorer-mobile-design",
     title: "Wine Explorer App – UI/UX Case Study",
@@ -367,5 +446,8 @@ export const projects: Project[] = [
       },
     ]
   },
+ 
+  
+  
   
 ];
