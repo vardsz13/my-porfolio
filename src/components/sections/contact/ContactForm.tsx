@@ -18,7 +18,7 @@ const ContactForm: React.FC = () => {
     const name = formData.get("name") as string;
 
     try {
-      const response = await fetch("https://formspree.io/f/xpwdqnaa", {
+      const response = await fetch("https://formspree.io/f/meororgw", {
         method: "POST",
         body: formData,
         headers: {
