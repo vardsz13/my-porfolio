@@ -14,6 +14,7 @@ import { projects } from "@/data/projects"; // Import projects from data file
 import useDocumentTitle from "@/utils/useDocumentTitle";
 import { useLocation } from "react-router-dom";
 import React from "react";
+import ScrollToTopButton from "../ScrollToTopButton";
 
 export default function App() {
   useDocumentTitle(""); // Use an empty string to get the default title
@@ -111,6 +112,7 @@ export default function App() {
       {/* Footer Section */}
       <Footer />
 
+      <ScrollToTopButton />
       {/* Add Sonner Toaster component */}
       <Toaster richColors position="bottom-right" />
     </div>
