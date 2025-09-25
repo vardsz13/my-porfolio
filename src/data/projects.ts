@@ -90,7 +90,7 @@ export const projects: Project[] = [
       {
         title: "User Side: Home Page",
         description:
-          "Landing page with company mission, values, services, testimonials, and a contact form. Responsive layout with device-mockup style project showcase. [https://www.facebook.com/webtechbuddie]",
+          "Landing page with company mission, values, services, testimonials, and a contact form. Responsive layout with device-mockup style project showcase.",
         imageUrl: webtechHomePage,
       },
       {

@@ -8,7 +8,7 @@ export const experiences: ExperienceItem[] = [
     description: [
       "Built and updated websites for small businesses and personal projects.",
       "Translated client requirements into wireframes, mockups, and working prototypes.",
-      "Collaborated with clients to deliver custom UI/UX solutions.",
+      "Handled both UI design and coding to ensure websites looked good and worked well",
     ],
   },
   {
