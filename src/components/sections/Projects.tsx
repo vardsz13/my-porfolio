@@ -85,6 +85,7 @@ export default function Projects({ projects }: ProjectsProps) {
         {projects.map((project, index) => (
           <Card
             key={index}
+            data-project-id={project.id}
             className="overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-zinc-700/50 border border-zinc-200 dark:border-zinc-700 hover:border-primary/30 dark:hover:border-primary/30 flex flex-col"
           >
             {project.imageUrl && (

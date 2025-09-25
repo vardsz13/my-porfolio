@@ -79,8 +79,8 @@ export default function ProjectDetail() {
   const handleBackClick = (e: React.MouseEvent) => {
     e.preventDefault();
     handlePageTransition(() => {
-      navigate("/#projects");
-      window.scrollTo(0, 0);
+      // Pass back the last opened project ID
+      navigate("/", { state: { scrollTo: "projects", fromProjectId: id } });
     });
   };
 

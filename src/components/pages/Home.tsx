@@ -12,9 +12,45 @@ import CallToAction from "@/components/sections/CallToAction";
 import Footer from "@/components/sections/Footer";
 import { projects } from "@/data/projects"; // Import projects from data file
 import useDocumentTitle from "@/utils/useDocumentTitle";
+import { useLocation } from "react-router-dom";
+import React from "react";
 
 export default function App() {
   useDocumentTitle(""); // Use an empty string to get the default title
+  const location = useLocation();
+
+  // Scroll to section if coming from ProjectDetail
+  React.useEffect(() => {
+    if (location.state && location.state.scrollTo === "projects") {
+      const tryScrollToProject = (attempts = 0) => {
+        // Try to find the card for the project
+        if (location.state.fromProjectId) {
+          const card = document.querySelector(
+            `[data-project-id="${location.state.fromProjectId}"]`
+          ) as HTMLElement | null;
+          if (card) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            card.classList.add("ring-2", "ring-primary", "transition");
+            setTimeout(
+              () => card.classList.remove("ring-2", "ring-primary"),
+              1200
+            );
+            return;
+          }
+        }
+        // Otherwise, scroll to the projects section
+        const el = document.getElementById("projects");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (attempts < 10) {
+          // Retry after a short delay if not found
+          setTimeout(() => tryScrollToProject(attempts + 1), 100);
+        }
+      };
+      setTimeout(() => tryScrollToProject(), 400);
+    }
+  }, [location.state]);
+
   return (
     <div className="min-h-screen w-full bg-zinc-100 dark:bg-zinc-950 py-10 px-4">
       {/* Navigation Bar */}
