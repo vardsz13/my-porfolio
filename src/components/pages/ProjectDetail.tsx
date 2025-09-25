@@ -94,7 +94,10 @@ export default function ProjectDetail() {
       <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Project not found</h1>
-          <Button onClick={handleBackClick} className="flex items-center">
+          <Button
+            onClick={handleBackClick}
+            className="flex items-center cursor-pointer"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             <span>Back to Projects</span>
           </Button>
@@ -121,7 +124,7 @@ export default function ProjectDetail() {
               variant="ghost"
               size="icon"
               onClick={() => setSelectedImage(null)}
-              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
+              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md cursor-pointer"
             >
               <X className="h-5 w-5" />
               <span className="sr-only">Close</span>
@@ -147,7 +150,7 @@ export default function ProjectDetail() {
       >
         <DialogOverlay className="bg-black/90" />
         <DialogContent
-          className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0"
+          className="max-w-[95vw] sm:max-w-[90vw] md:max-w-[85vw] lg:max-w-[80vw] xl:max-w-6xl border-none bg-transparent shadow-none p-0 cursor-pointer"
           closeButton={false}
         >
           <div className="relative max-w-full max-h-[95vh] flex items-center justify-center">
@@ -179,7 +182,7 @@ export default function ProjectDetail() {
           variant="ghost"
           size="sm"
           onClick={handleBackClick}
-          className="mb-6 hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center"
+          className="mb-6 hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center cursor-pointer"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           <span>Back to Projects</span>
@@ -279,7 +282,7 @@ export default function ProjectDetail() {
                 variant="default"
                 size="lg"
                 onClick={() => setIsVideoOpen(true)}
-                className="bg-purple-600 hover:bg-purple-700 dark:text-secondary-foreground"
+                className="bg-purple-600 hover:bg-purple-700 dark:text-secondary-foreground cursor-pointer"
               >
                 <Play className="mr-2 h-5 w-5" />
                 <span>Watch Video</span>

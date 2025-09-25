@@ -82,7 +82,7 @@ export default function CertificateItemCard({
             <Button
               variant="outline"
               size="sm"
-              className="w-full gap-1.5 text-xs"
+              className="w-full gap-1.5 text-xs cursor-pointer"
             >
               <Eye className="h-3 w-3" />
               <span>View Certificate</span>
@@ -97,7 +97,7 @@ export default function CertificateItemCard({
           <Button
             variant="outline"
             size="sm"
-            className="w-full gap-1.5 text-xs"
+            className="w-full gap-1.5 text-xs cursor-pointer"
           >
             <Eye className="h-3 w-3" />
             <span>View Certificate</span>

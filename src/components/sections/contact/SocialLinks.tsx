@@ -39,7 +39,7 @@ const SocialLinks: React.FC = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-lg bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 hover:bg-white dark:hover:bg-zinc-800 transition-colors duration-200 flex-1 flex justify-center items-center"
+            className="p-3 rounded-lg bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-200 dark:hover:bg-zinc-700  transition-colors duration-200 flex-1 flex justify-center items-center"
             aria-label={link.ariaLabel}
           >
             {link.icon}

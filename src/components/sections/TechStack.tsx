@@ -30,8 +30,8 @@ export default function TechStack() {
                     key={tech.name}
                     variant="outline"
                     className="px-3 py-1 text-sm font-medium flex items-center border-zinc-300 dark:border-zinc-600 
-                    bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 
-                    transition-colors cursor-pointer text-zinc-800 dark:text-zinc-200"
+                    bg-zinc-100 dark:bg-zinc-800
+                    transition-colors text-zinc-800 dark:text-zinc-200"
                   >
                     {tech.icon} {tech.name}
                   </Badge>

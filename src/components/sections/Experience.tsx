@@ -27,7 +27,7 @@ const Experience: React.FC = () => {
               <div className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-3 border-white dark:border-zinc-900 bg-zinc-600 dark:bg-zinc-500 shadow-md z-10"></div>
 
               <div className="p-5 rounded-lg bg-white dark:bg-zinc-800 shadow border border-zinc-100 dark:border-zinc-700">
-                <div className="flex justify-between items-start gap-3 mb-3">
+                <div className="flex justify-between items-start gap-3 mb-2">
                   <h3 className="text-lg md:text-xl font-semibold text-zinc-800 dark:text-zinc-100">
                     {exp.title}
                   </h3>
@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
                 </div>
 
                 {exp.company && (
-                  <p className="text-md text-zinc-600 dark:text-zinc-300 font-medium mb-4">
+                  <p className="text-md text-zinc-600 dark:text-zinc-300 font-semibold mb-4">
                     {exp.company}
                   </p>
                 )}

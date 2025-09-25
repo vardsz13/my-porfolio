@@ -76,7 +76,7 @@ const ContactForm: React.FC = () => {
           <Button
             onClick={() => setStatus("idle")}
             variant="outline"
-            className="mt-4"
+            className="mt-4 cursor-pointer"
           >
             Send another message
           </Button>
@@ -123,7 +123,7 @@ const ContactForm: React.FC = () => {
       )}
       <Button
         type="submit"
-        className="w-full"
+        className="w-full cursor-pointer"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? "Sending..." : "Send Message"}

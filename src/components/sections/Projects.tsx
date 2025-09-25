@@ -65,7 +65,7 @@ export default function Projects({ projects }: ProjectsProps) {
               variant="ghost"
               size="icon"
               onClick={() => setSelectedImage(null)}
-              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md"
+              className="w-8 h-8 rounded-full bg-black/50 text-white hover:bg-black/70 hover:text-white shadow-md cursor-pointer"
             >
               <X className="h-5 w-5" />
               <span className="sr-only">Close</span>
@@ -147,7 +147,7 @@ export default function Projects({ projects }: ProjectsProps) {
                     variant="outline"
                     size="sm"
                     asChild
-                    className="flex-shrink-0"
+                    className="flex-shrink-0 cursor-pointer"
                   >
                     <a
                       href={project.githubUrl}
@@ -165,7 +165,7 @@ export default function Projects({ projects }: ProjectsProps) {
                   variant="default"
                   size="sm"
                   onClick={() => handleProjectClick(project.id)}
-                  className="flex items-center flex-shrink-0"
+                  className="flex items-center flex-shrink-0 cursor-pointer"
                 >
                   <ExternalLink className="mr-1 h-4 w-4" />
                   <span>View Project</span>
