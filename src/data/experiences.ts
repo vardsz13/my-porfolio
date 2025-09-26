@@ -3,7 +3,7 @@ import { ExperienceItem } from "@/types/experience";
 export const experiences: ExperienceItem[] = [
     {
     title: "Freelance UI & Front-End Developer",
-    company: "Self-Employed",
+    company: "Freelance",
     year: "2025",
     description: [
       "Built and updated websites for small businesses and personal projects.",
