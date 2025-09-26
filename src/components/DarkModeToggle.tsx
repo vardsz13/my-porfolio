@@ -4,47 +4,30 @@ import { FiSun, FiMoon } from "react-icons/fi";
 export const DarkModeToggle: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Check for user's preferred theme or saved preference on load
   useEffect(() => {
-    // First check localStorage
+    // Check localStorage for saved preference
     const savedPreference = localStorage.getItem("darkMode");
 
-    // If we have a saved preference, use that
     if (savedPreference !== null) {
       const isDark = savedPreference === "true";
       setDarkMode(isDark);
-
-      // Apply the saved preference
       if (isDark) {
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
       }
-    }
-    // Otherwise, use system preference
-    else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setDarkMode(prefersDark);
-
-      // Apply the system preference
-      if (prefersDark) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+    } else {
+      // Default to dark mode
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
     }
   }, []);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-
-    // Save preference to localStorage
     localStorage.setItem("darkMode", String(newMode));
-
-    // Toggle dark class on html element
     if (newMode) {
       document.documentElement.classList.add("dark");
     } else {
