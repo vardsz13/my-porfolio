@@ -5,4 +5,5 @@ export interface HeroData {
     email: string;
     profileImage: string;
     availableToWork: boolean;
+    helloMessage?: string;
   }

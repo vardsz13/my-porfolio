@@ -7,5 +7,6 @@ export const heroData: HeroData = {
   title: "Front-End Developer and UI/UX Designer",
   email: "paul.varde10@gmail.com",
   profileImage: profilePic,
-  availableToWork: true
+  availableToWork: true,
+  helloMessage: "👋 Hello, nice to meet you! I'm John Paul, it’s a pleasure having you here."
 };
