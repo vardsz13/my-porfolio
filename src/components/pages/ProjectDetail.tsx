@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 import { handlePageTransition } from "@/utils/pageTransition";
 import ProjectModuleDialog from "@/components/ui/ProjectModuleDialog";
 import useDocumentTitle from "@/utils/useDocumentTitle";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -108,6 +109,9 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen w-full bg-zinc-100 dark:bg-zinc-950 py-10 px-4">
+      {/* Add ScrollToTopButton component */}
+      <ScrollToTopButton />
+
       {/* Image Dialog - Enhanced for larger image display */}
       <Dialog
         open={!!selectedImage}
