@@ -34,7 +34,7 @@ export function Tooltip({
 
       {isVisible && (
         <div
-          className={`absolute z-50 px-3 py-2 text-sm font-medium text-white bg-zinc-800 dark:bg-zinc-700 rounded-lg shadow-sm 
+          className={`absolute z-50 px-3 py-2 text-xs md:text-sm font-medium text-white bg-zinc-800 dark:bg-zinc-700 rounded-lg shadow-sm 
           ${positionClasses[position]} ${className}
           animate-fadeIn whitespace-nowrap`}
         >
