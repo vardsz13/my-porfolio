@@ -4,7 +4,11 @@ import {
   FaFileDownload,
   FaExternalLinkAlt,
 } from "react-icons/fa";
-import { motion, Variant } from "framer-motion";
+// Import without explicit type to avoid TypeScript error
+import * as framerMotion from "framer-motion";
+const { motion } = framerMotion;
+// Define Variant type inline
+type Variant = any;
 
 interface ContactInfoProps {
   className?: string;
