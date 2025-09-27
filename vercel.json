@@ -2,9 +2,7 @@
     "rewrites": [
       { "source": "/(.*)", "destination": "/index.html" }
     ],
-    "builds": [
-      { "src": "package.json", "use": "@vercel/node" }
-    ],
+    "framework": "vite",
     "buildCommand": "npm run build",
     "installCommand": "npm install"
   }
