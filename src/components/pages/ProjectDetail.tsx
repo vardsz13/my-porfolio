@@ -10,6 +10,7 @@ import { handlePageTransition } from "@/utils/pageTransition";
 import ProjectModuleDialog from "@/components/ui/ProjectModuleDialog";
 import useDocumentTitle from "@/utils/useDocumentTitle";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import ContactInfo from "@/components/sections/contact/ContactInfo";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -353,10 +354,10 @@ export default function ProjectDetail() {
           <h2 className="text-2xl font-bold mb-4 text-zinc-800 dark:text-zinc-100">
             Let's Connect
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-300">
-            Interested in discussing this project or working together? Feel free
-            to reach out!
-          </p>
+          <p className="text-zinc-600 dark:text-zinc-300 mb-6">Get in Touch</p>
+
+          {/* Import and use the ContactInfo component */}
+          <ContactInfo />
         </div>
       </div>
 

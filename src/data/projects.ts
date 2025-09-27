@@ -184,6 +184,7 @@ export const projects: Project[] = [
     description:
       "A comprehensive file management system built with Laravel and React for efficient document organization and sharing.",
     technologies: [
+      "Figma",
       "Laravel",
       "React",
       "TypeScript",
@@ -313,7 +314,7 @@ export const projects: Project[] = [
     title: "Mobile App with IoT Technologies",
     description:
       "A Flutter-based mobile application that integrates with IoT devices for smart home monitoring and control.",
-    technologies: ["Flutter", "Dart", "C/C++", "Firebase"],
+    technologies: ["Figma","Flutter", "Dart", "C/C++", "Firebase"],
     githubUrl: "",
     liveUrl: "",
     imageUrl: iotImage,
@@ -366,6 +367,7 @@ export const projects: Project[] = [
     description:
       "The E-commerce Project is a user-friendly online store designed to make shopping for shoes, apparel, and accessories easy and enjoyable. The website helps customers feel confident making purchases and managing their orders.",
     technologies: [
+      "Figma",
       "HTML5",
       "CSS",
       "Bootstrap",

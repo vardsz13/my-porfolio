@@ -1,7 +1,7 @@
 import { CallToActionData } from "@/types/callToAction";
 
 export const callToActionData: CallToActionData = {
-  message: "Ready to work together? Reach out to discuss your project!",
+  message: "I’d be happy to connect and discuss how I can contribute to your team.",
   buttonText: "Contact Me",
   buttonLink: "#contact",
 };
