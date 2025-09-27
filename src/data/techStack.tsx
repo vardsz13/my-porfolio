@@ -8,6 +8,7 @@ import {
   FaTrello,
   FaSass,
   FaWordpress,
+  FaGlobe,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -208,6 +209,12 @@ export const techStack: TechStackData = {
       name: "WordPress",
       icon: (
         <FaWordpress className="mr-2 text-zinc-700 dark:text-zinc-300 text-lg" />
+      ),
+    },
+    {
+      name: "Wix",
+      icon: (
+        <FaGlobe className="mr-2 text-zinc-700 dark:text-zinc-300 text-lg" />
       ),
     },
   ],

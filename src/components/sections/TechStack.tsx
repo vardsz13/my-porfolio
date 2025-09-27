@@ -94,23 +94,26 @@ export default function TechStack() {
           </div>
 
           {/* Dialog content with custom scrollbar */}
-          <div className="flex-1 overflow-y-auto p-5 custom-scrollbar will-change-auto text-rendering-optimizeLegibility bg-white dark:bg-zinc-900">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-6">
+          <div className="flex-1 overflow-y-auto p-6 custom-scrollbar will-change-auto text-rendering-optimizeLegibility bg-white dark:bg-zinc-900">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {Object.entries(techStack).map(([category, technologies]) => (
-                <div key={category} className="space-y-2.5">
-                  <h3 className="text-lg font-semibold pb-1.5 border-b border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200">
+                <div
+                  key={category}
+                  className="space-y-3 p-4 rounded-lg border border-zinc-100 dark:border-zinc-800 hover:border-zinc-200 dark:hover:border-zinc-700 transition-all duration-300 bg-zinc-50/50 dark:bg-zinc-800/30 shadow-sm hover:shadow-md"
+                >
+                  <h3 className="text-lg font-semibold pb-2 border-b-5 border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200">
                     {category}
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2.5">
                     {technologies.map((tech) => (
                       <Badge
                         key={tech.name}
                         variant="outline"
-                        className="px-3 py-1.5 text-sm font-medium flex items-center gap-1.5 border-zinc-300 dark:border-zinc-600 
-                        bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700
-                        transition-colors text-zinc-800 dark:text-zinc-200 shadow-sm"
+                        className="px-3.5 py-1.5 text-sm font-medium flex items-center gap-2 border-zinc-200 dark:border-zinc-700 
+                        bg-white dark:bg-zinc-800/80 hover:bg-zinc-100 dark:hover:bg-zinc-700/90
+                        transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:-translate-y-0.5"
                       >
-                        <span className="text-zinc-600 dark:text-zinc-400">
+                        <span className="text-zinc-600 dark:text-zinc-300">
                           {tech.icon}
                         </span>
                         <span className="font-medium">{tech.name}</span>
@@ -167,7 +170,7 @@ export default function TechStack() {
 
                 return (
                   <div key={category} className="space-y-2">
-                    <h3 className="text-lg font-medium pb-1 border-b border-zinc-200 dark:border-zinc-700">
+                    <h3 className="text-lg font-medium pb-1 border-b-2 border-zinc-200 dark:border-zinc-700">
                       {category}
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -193,7 +196,7 @@ export default function TechStack() {
             <Button
               onClick={() => setIsDialogOpen(true)}
               variant="outline"
-              className="w-full"
+              className="w-full py-4 text-base font-medium bg-white hover:bg-zinc-50 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-600 shadow-sm hover:shadow transition-all duration-200 rounded-md"
             >
               View All
             </Button>
