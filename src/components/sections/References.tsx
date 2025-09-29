@@ -30,7 +30,7 @@ const References: React.FC = () => {
               <p className="text-zinc-700 dark:text-zinc-300 text-sm mt-1 font-medium">
                 {ref.title}
               </p>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm mt-0.5">
+              <p className="text-zinc-600 dark:text-zinc-400 text-xs md:text-sm mt-0.5">
                 {ref.organization}
               </p>
 
