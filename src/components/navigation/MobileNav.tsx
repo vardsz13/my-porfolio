@@ -51,6 +51,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ closeMenu }) => {
             offset={-80}
             spy={true}
             isDynamic={true}
+            activeClass="text-indigo-600 font-medium"
             className="text-lg cursor-pointer hover:text-indigo-500 transition-colors"
             onClick={closeMenu}
           >

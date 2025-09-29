@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { experiences } from "@/data/experiences";
 
 const Experience: React.FC = () => {
+  // Assuming the experiences array is sorted with the latest/current first
+  const latestExperienceIndex = 0;
+
   return (
     <Card id="experience" className="scroll-mt-20">
       <CardHeader>
@@ -23,17 +26,42 @@ const Experience: React.FC = () => {
 
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-10 pb-6 last:pb-0">
-              {/* Timeline dot - smaller size */}
-              <div className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-3 border-white dark:border-zinc-900 bg-zinc-600 dark:bg-zinc-500 shadow-md z-10"></div>
+              {/* Timeline dot - with animation for the current/latest experience */}
+              <div
+                className={`absolute left-0 top-1.5 w-5 h-5 rounded-full border-3 
+                  border-white dark:border-zinc-900 shadow-md z-10
+                  ${
+                    index === latestExperienceIndex
+                      ? "bg-primary dark:bg-primary-400 animate-pulse"
+                      : "bg-zinc-600 dark:bg-zinc-500"
+                  }`}
+              >
+                {index === latestExperienceIndex && (
+                  <span className="absolute inset-0 rounded-full bg-primary/40 dark:bg-primary-400/40 animate-ping"></span>
+                )}
+              </div>
 
-              <div className="p-5 rounded-lg bg-white dark:bg-zinc-800 shadow border border-zinc-100 dark:border-zinc-700">
+              <div
+                className={`p-5 rounded-lg bg-white dark:bg-zinc-800 shadow border 
+                ${
+                  index === latestExperienceIndex
+                    ? "border-primary/30 dark:border-primary-400/30"
+                    : "border-zinc-100 dark:border-zinc-700"
+                }`}
+              >
                 <div className="flex justify-between items-start gap-3 mb-2">
                   <h3 className="text-lg md:text-xl font-semibold text-zinc-800 dark:text-zinc-100">
                     {exp.title}
                   </h3>
                   <Badge
-                    variant="outline"
-                    className="text-sm font-mono px-2 py-1 border-zinc-200 dark:border-zinc-700"
+                    variant={
+                      index === latestExperienceIndex ? "default" : "outline"
+                    }
+                    className={`text-sm font-mono px-2 py-1 ${
+                      index === latestExperienceIndex
+                        ? ""
+                        : "border-zinc-200 dark:border-zinc-700"
+                    }`}
                   >
                     {exp.year}
                   </Badge>

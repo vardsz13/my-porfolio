@@ -10,41 +10,63 @@ interface ImageItem {
 interface ImageSlideshowProps {
   images: ImageItem[];
   title?: string;
-  speed?: number; // Lower = faster
+  speed?: number; // Higher = faster
   className?: string;
 }
 
 export default function ImageSlideshow({
   images,
   title = "My Journey",
-  speed = 30, // Animation speed (lower = faster)
+  speed = 30, // Animation speed (higher = faster)
   className = "",
 }: ImageSlideshowProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Duplicate the images to create a seamless loop
-  const allImages = [...images, ...images];
+  const allImages = [...images, ...images, ...images]; // Triple the images for smoother looping
 
   // Handle the continuous horizontal scroll animation
   useEffect(() => {
-    if (!scrollRef.current || images.length <= 3) return;
+    if (!scrollRef.current || !containerRef.current || images.length <= 3)
+      return;
 
     let animationId: number;
     let position = 0;
+    let lastTimestamp: number | null = null;
     const imageWidth = 180; // Width of each image + margin
     const totalWidth = images.length * imageWidth;
 
-    const scroll = () => {
-      if (!scrollRef.current) return;
+    // Pixels per second (adjusted by speed parameter)
+    const pixelsPerSecond = speed * 2;
 
-      position += 1; // Speed of scrolling
+    const scroll = (timestamp: number) => {
+      if (!scrollRef.current || !containerRef.current) return;
 
-      // Reset position when we've scrolled through half the images (original set)
+      // Calculate elapsed time since last frame
+      if (lastTimestamp === null) lastTimestamp = timestamp;
+      const elapsed = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      // Calculate how much to move based on elapsed time and speed
+      const delta = (pixelsPerSecond * elapsed) / 1000;
+      position += delta;
+
+      // Reset position when we've scrolled through the original set
+      // This creates a seamless loop since we have 3 sets of images
       if (position >= totalWidth) {
         position = 0;
+        // Instantly reset to start without visual jump
+        scrollRef.current.style.transition = "none";
+        scrollRef.current.style.transform = `translateX(-${position}px)`;
+        // Force a reflow to ensure the transition is disabled
+        void scrollRef.current.offsetWidth;
+        // Re-enable transition for smooth movement
+        scrollRef.current.style.transition = "";
+      } else {
+        scrollRef.current.style.transform = `translateX(-${position}px)`;
       }
 
-      scrollRef.current.style.transform = `translateX(-${position}px)`;
       animationId = requestAnimationFrame(scroll);
     };
 
@@ -72,7 +94,7 @@ export default function ImageSlideshow({
 
       <CardContent className="pt-0">
         {/* Scrolling image container */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden" ref={containerRef}>
           {/* Gradient overlays for fading effect */}
           <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-zinc-100 dark:from-zinc-950 to-transparent"></div>
           <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-zinc-100 dark:from-zinc-950 to-transparent"></div>
@@ -82,7 +104,9 @@ export default function ImageSlideshow({
             <div
               ref={scrollRef}
               className="flex gap-4 whitespace-nowrap"
-              style={{ willChange: "transform" }}
+              style={{
+                willChange: "transform",
+              }}
             >
               {allImages.map((image, index) => (
                 <div

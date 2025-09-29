@@ -20,7 +20,7 @@ export const DesktopNav: React.FC = () => {
           offset={-80}
           spy={true}
           hashSpy={true}
-          activeClass="text-indigo-500 font-medium"
+          activeClass="text-indigo-600 font-medium"
           className="cursor-pointer hover:text-indigo-500 transition-colors duration-300"
           isDynamic={true}
         >
