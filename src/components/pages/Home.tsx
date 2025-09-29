@@ -15,6 +15,8 @@ import useDocumentTitle from "@/utils/useDocumentTitle";
 import { useLocation } from "react-router-dom";
 import React from "react";
 import ScrollToTopButton from "../ScrollToTopButton";
+import ImageSlideshow from "@/components/sections/ImageSlideshow"; // Import the component
+import { slideshowImages } from "@/data/slideshowImages"; // Import the data
 
 export default function App() {
   useDocumentTitle(""); // Use an empty string to get the default title
@@ -86,6 +88,11 @@ export default function App() {
           <div className="md:col-span-1">
             <Contact />
           </div>
+        </div>
+
+        {/* Full Width Slideshow Section - Just Images */}
+        <div className="mt-6">
+          <ImageSlideshow images={slideshowImages} title="My Journey" />
         </div>
 
         {/* Full Width Experience Section */}
