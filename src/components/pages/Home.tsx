@@ -10,13 +10,14 @@ import { Toaster } from "sonner";
 import Projects from "@/components/sections/Projects";
 import CallToAction from "@/components/sections/CallToAction";
 import Footer from "@/components/sections/Footer";
-import { projects } from "@/data/projects"; // Import projects from data file
+import { projects } from "@/data/projects";
 import useDocumentTitle from "@/utils/useDocumentTitle";
 import { useLocation } from "react-router-dom";
 import React from "react";
 import ScrollToTopButton from "../ScrollToTopButton";
-import ImageSlideshow from "@/components/sections/ImageSlideshow"; // Import the component
-import { slideshowImages } from "@/data/slideshowImages"; // Import the data
+import ImageSlideshow from "@/components/sections/ImageSlideshow";
+import { slideshowImages } from "@/data/slideshowImages";
+import References from "@/components/sections/References";
 
 export default function App() {
   useDocumentTitle(""); // Use an empty string to get the default title
@@ -108,6 +109,11 @@ export default function App() {
         {/* Full Width Projects Section - Simple and Clean */}
         <div className="mt-6">
           <Projects projects={projects} />
+        </div>
+
+        {/* References Section - Added below Projects */}
+        <div className="mt-6">
+          <References />
         </div>
 
         {/* Text Section - Call to Action */}
