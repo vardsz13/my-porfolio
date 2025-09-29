@@ -40,7 +40,7 @@ const References: React.FC = () => {
                     <MdEmail className="text-zinc-500 dark:text-zinc-500" />
                     <a
                       href={`mailto:${ref.email}`}
-                      className="hover:text-primary dark:hover:text-primary-400 transition-colors"
+                      className="text-blue-500 dark:text-blue-400 hover:text-primary dark:hover:text-primary-400 transition-colors"
                     >
                       {ref.email}
                     </a>
@@ -50,7 +50,9 @@ const References: React.FC = () => {
                 {ref.phone && (
                   <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
                     <FaPhone className="text-zinc-500 dark:text-zinc-500" />
-                    <span>{ref.phone}</span>
+                    <span className="text-green-600 dark:text-green-400">
+                      {ref.phone}
+                    </span>
                   </div>
                 )}
               </div>
