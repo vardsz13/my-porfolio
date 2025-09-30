@@ -103,7 +103,7 @@ export default function ContactInfo({ className = "" }: ContactInfoProps) {
             </span>
             <a
               href="/resume/Resume_Varde,John Paul.pdf"
-              download="John_Paul_Varde_Resume.pdf"
+              download="Resume_Varde,John Paul_Front-End-Cavite.pdf"
               className="text-sm text-zinc-800 dark:text-zinc-200 hover:text-primary dark:hover:text-primary-400 transition-colors flex items-center gap-1.5 group-hover:gap-2"
             >
               Download Resume
