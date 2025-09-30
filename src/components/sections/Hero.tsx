@@ -84,7 +84,7 @@ export default function Hero() {
         {/* Animated Title */}
         <p
           ref={titleRef}
-          className="title-animation text-xl md:text-2xl mb-3 leading-normal tracking-wider font-semibold"
+          className="title-animation text-sm sm:text-lg md:text-2xl mb-3 leading-normal tracking-wider font-semibold"
         >
           {heroData.title.split("").map((char, index) => (
             <span
