@@ -117,7 +117,7 @@ export default function Projects({ projects }: ProjectsProps) {
                 {project.year && (
                   <Badge
                     variant="outline"
-                    className="text-sm font-mono px-2.5 py-0.5"
+                    className="text-sm font-mono px-2.5 py-0.5 bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 border-indigo-300 dark:border-indigo-700/40"
                   >
                     {project.year}
                   </Badge>
@@ -132,7 +132,7 @@ export default function Projects({ projects }: ProjectsProps) {
                   <Badge
                     key={techIndex}
                     variant="secondary"
-                    className="text-xs"
+                    className="text-xs bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 border-slate-300 dark:border-slate-700"
                   >
                     {tech}
                   </Badge>

@@ -22,7 +22,7 @@ export default function Certificates() {
       icon={<FaCertificate className="text-zinc-900 dark:text-zinc-100" />}
       id="certifications"
     >
-      <div className="flex flex-col space-y-3">
+      <div className="grid grid-cols-1 gap-4">
         {certificates.map((cert, index) => (
           <CertificateItemCard
             key={index}

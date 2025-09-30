@@ -20,9 +20,8 @@ export const AboutCard: React.FC<AboutCardProps> = ({ title, description }) => {
           <p
             key={index}
             className="mb-4 text-zinc-700 dark:text-zinc-300 last:mb-0"
-          >
-            {paragraph}
-          </p>
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
         ))}
       </CardContent>
     </Card>

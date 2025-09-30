@@ -149,3 +149,69 @@
 .animate-fadeIn {
   animation: fadeIn 0.25s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
+
+/* Title animation styles */
+.title-animation {
+  letter-spacing: 0.05em;
+}
+
+.title-animation span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.5s, transform 0.5s, text-shadow 0.5s;
+}
+
+.title-animation.animate-title span {
+  opacity: 1;
+  transform: translateY(0);
+  animation: colorFlow 8s infinite alternate;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Apply animation with delay for each word */
+.title-animation.animate-title span:nth-child(1) {
+  animation-delay: 0s;
+}
+.title-animation.animate-title span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.title-animation.animate-title span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.title-animation.animate-title span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.title-animation.animate-title span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.title-animation.animate-title span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+/* Gradient color flow animation */
+@keyframes colorFlow {
+  0% {
+    color: #3b82f6;
+  } /* Blue */
+  20% {
+    color: #10b981;
+  } /* Green */
+  40% {
+    color: #6366f1;
+  } /* Indigo */
+  60% {
+    color: #8b5cf6;
+  } /* Violet */
+  80% {
+    color: #ec4899;
+  } /* Pink */
+  100% {
+    color: #f97316;
+  } /* Orange */
+}
+
+/* Dark mode adjustments */
+.dark .title-animation.animate-title span {
+  text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}

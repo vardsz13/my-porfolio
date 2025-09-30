@@ -71,3 +71,132 @@
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
+/* Title animation styles */
+.title-animation {
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  font-feature-settings: "salt" on, "ss01" on;
+}
+
+.title-animation span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.5s, transform 0.5s, text-shadow 0.5s;
+  background-clip: text;
+  -webkit-background-clip: text;
+  padding-bottom: 1px;
+}
+
+.title-animation.animate-title span {
+  opacity: 1;
+  transform: translateY(0);
+  animation: gradientFlow 8s infinite alternate;
+  text-shadow: 0 0 5px rgba(59, 130, 246, 0.5),
+    /* Blue glow */ 0 0 15px rgba(99, 102, 241, 0.3),
+    /* Indigo glow */ 0 0 20px rgba(139, 92, 246, 0.2); /* Violet glow */
+  background-image: linear-gradient(
+    45deg,
+    #3b82f6 0%,
+    #10b981 25%,
+    #6366f1 50%,
+    #8b5cf6 75%,
+    #ec4899 100%
+  );
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Apply animation with delay for each word */
+.title-animation.animate-title span:nth-child(1) {
+  animation-delay: 0s;
+}
+.title-animation.animate-title span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.title-animation.animate-title span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.title-animation.animate-title span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.title-animation.animate-title span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.title-animation.animate-title span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+/* Gradient flow animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5),
+      0 0 15px rgba(99, 102, 241, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.5),
+      0 0 18px rgba(99, 102, 241, 0.4), 0 0 25px rgba(236, 72, 153, 0.3);
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5),
+      0 0 15px rgba(99, 102, 241, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+}
+
+/* Dark mode shadow animation */
+@keyframes darkGradientFlow {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.7),
+      0 0 18px rgba(129, 140, 248, 0.5), 0 0 25px rgba(167, 139, 250, 0.3);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.7),
+      0 0 20px rgba(129, 140, 248, 0.6), 0 0 30px rgba(244, 114, 182, 0.5);
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.7),
+      0 0 18px rgba(129, 140, 248, 0.5), 0 0 25px rgba(167, 139, 250, 0.3);
+  }
+}
+
+/* Dark mode adjustments */
+.dark .title-animation.animate-title span {
+  animation: darkGradientFlow 8s infinite alternate;
+  background-image: linear-gradient(
+    45deg,
+    #60a5fa 0%,
+    #34d399 25%,
+    #818cf8 50%,
+    #a78bfa 75%,
+    #f472b6 100%
+  );
+}
+
+/* Professional Typography Enhancements */
+@media (min-width: 768px) {
+  .title-animation {
+    max-width: 90%;
+    margin-bottom: 0.75rem;
+  }
+
+  .title-animation span {
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Create a subtle underline effect on hover */
+.title-animation.animate-title span:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}

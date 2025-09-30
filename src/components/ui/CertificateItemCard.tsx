@@ -46,7 +46,7 @@ export default function CertificateItemCard({
           </h3>
           <Badge
             variant="outline"
-            className="whitespace-nowrap text-xs font-mono px-2 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800 flex-shrink-0"
+            className="whitespace-nowrap text-xs font-mono px-2 py-1 bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 border-indigo-300 dark:border-indigo-700/40 flex-shrink-0"
           >
             {certificate.year}
           </Badge>
@@ -59,7 +59,7 @@ export default function CertificateItemCard({
           </h3>
           <Badge
             variant="outline"
-            className="whitespace-nowrap text-xs font-mono px-2 py-1 bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800"
+            className="whitespace-nowrap text-xs font-mono px-2 py-1 bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 border-indigo-300 dark:border-indigo-700/40"
           >
             {certificate.year}
           </Badge>

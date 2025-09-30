@@ -18,7 +18,7 @@ export const references: ReferenceItem[] = [
   {
     name: "Ms. Agnes Serrano",
     title: "Customer Care Specialist",
-    organization: "IBM",
+    organization: "International Business Machines Corporation (IBM)",
     email: "emecserrano69@gmail.com",
     phone: "0999-8373059"
   }

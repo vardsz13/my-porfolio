@@ -1,7 +1,17 @@
 import { heroData } from "@/data/hero";
 import { Tooltip } from "@/components/ui/tooltip";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
+  const titleRef = useRef<HTMLParagraphElement>(null);
+
+  // Add animation effect when component mounts
+  useEffect(() => {
+    if (titleRef.current) {
+      titleRef.current.classList.add("animate-title");
+    }
+  }, []);
+
   return (
     <section className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
       <div className="relative mx-auto md:mx-0 mb-1 md:mb-0">
@@ -66,7 +76,26 @@ export default function Hero() {
             {heroData.location}
           </span>
         </p>
-        <p className="text-xl mb-3">{heroData.title}</p>
+
+        {/* Animated Title */}
+        <p
+          ref={titleRef}
+          className="title-animation text-xl md:text-2xl mb-3 leading-normal tracking-wider font-semibold"
+        >
+          {heroData.title.split(" ").map((word, index) => (
+            <span
+              key={index}
+              className="inline-block mx-0.5 relative"
+              style={{
+                fontVariationSettings: "'wght' 500, 'wdth' 105",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {word}
+            </span>
+          ))}
+        </p>
+
         <div className="flex gap-2 justify-center md:justify-start">
           <a
             href="/resume/Resume_Varde,John Paul.pdf"

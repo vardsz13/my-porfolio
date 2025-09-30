@@ -32,12 +32,12 @@ const Experience: React.FC = () => {
                   border-white dark:border-zinc-900 shadow-md z-10
                   ${
                     index === latestExperienceIndex
-                      ? "bg-primary dark:bg-primary-400 animate-pulse"
+                      ? "bg-indigo-500 dark:bg-indigo-400 animate-pulse"
                       : "bg-zinc-600 dark:bg-zinc-500"
                   }`}
               >
                 {index === latestExperienceIndex && (
-                  <span className="absolute inset-0 rounded-full bg-primary/40 dark:bg-primary-400/40 animate-ping"></span>
+                  <span className="absolute inset-0 rounded-full bg-indigo-500/40 dark:bg-indigo-400/40 animate-ping"></span>
                 )}
               </div>
 
@@ -45,7 +45,7 @@ const Experience: React.FC = () => {
                 className={`p-5 rounded-lg bg-white dark:bg-zinc-800 shadow border 
                 ${
                   index === latestExperienceIndex
-                    ? "border-primary/30 dark:border-primary-400/30"
+                    ? "border-indigo-400/60 dark:border-indigo-500/40"
                     : "border-zinc-100 dark:border-zinc-700"
                 }`}
               >
@@ -54,13 +54,11 @@ const Experience: React.FC = () => {
                     {exp.title}
                   </h3>
                   <Badge
-                    variant={
-                      index === latestExperienceIndex ? "default" : "outline"
-                    }
+                    variant="outline"
                     className={`text-sm font-mono px-2 py-1 ${
                       index === latestExperienceIndex
-                        ? ""
-                        : "border-zinc-200 dark:border-zinc-700"
+                        ? "bg-indigo-100 dark:bg-indigo-800/50 text-indigo-800 dark:text-indigo-100 border-indigo-300 dark:border-indigo-600 font-medium"
+                        : "bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 border-indigo-300 dark:border-indigo-700/40"
                     }`}
                   >
                     {exp.year}
