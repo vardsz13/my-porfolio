@@ -5,11 +5,15 @@ import { useEffect, useRef } from "react";
 export default function Hero() {
   const titleRef = useRef<HTMLParagraphElement>(null);
 
-  // Add animation effect when component mounts
+  // Add animation effect when component mounts with a slight delay for a more dramatic effect
   useEffect(() => {
-    if (titleRef.current) {
-      titleRef.current.classList.add("animate-title");
-    }
+    const timer = setTimeout(() => {
+      if (titleRef.current) {
+        titleRef.current.classList.add("animate-title");
+      }
+    }, 300); // Delay the animation start by 300ms for better visual effect
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -82,16 +86,19 @@ export default function Hero() {
           ref={titleRef}
           className="title-animation text-xl md:text-2xl mb-3 leading-normal tracking-wider font-semibold"
         >
-          {heroData.title.split(" ").map((word, index) => (
+          {heroData.title.split("").map((char, index) => (
             <span
               key={index}
-              className="inline-block mx-0.5 relative"
+              className={`inline-block relative ${
+                char === " " ? "mx-1" : "mx-[1px]"
+              }`}
               style={{
-                fontVariationSettings: "'wght' 500, 'wdth' 105",
+                fontVariationSettings: "'wght' 600, 'wdth' 105",
                 letterSpacing: "0.01em",
+                animationDelay: `${index * 0.05}s`,
               }}
             >
-              {word}
+              {char}
             </span>
           ))}
         </p>

@@ -1,0 +1,16 @@
+/* Additional hover effects for the title animation */
+.title-animation:hover span {
+  animation-play-state: paused;
+  transition: transform 0.3s ease;
+}
+
+.title-animation:hover span:hover {
+  transform: translateY(-5px) scale(1.2);
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.8),
+    0 0 25px rgba(99, 102, 241, 0.6), 0 0 35px rgba(139, 92, 246, 0.4);
+}
+
+.dark .title-animation:hover span:hover {
+  text-shadow: 0 0 15px rgba(96, 165, 250, 0.9),
+    0 0 25px rgba(129, 140, 248, 0.7), 0 0 35px rgba(167, 139, 250, 0.5);
+}

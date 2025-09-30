@@ -110,10 +110,10 @@ export default function TechStack() {
                         key={tech.name}
                         variant="outline"
                         className="px-3.5 py-1.5 text-sm font-medium flex items-center gap-2 border-zinc-200 dark:border-zinc-700 
-                        bg-white dark:bg-zinc-800/80 hover:bg-zinc-100 dark:hover:bg-zinc-700/90
-                        transition-all duration-200 text-zinc-800 dark:text-zinc-200 shadow-sm hover:-translate-y-0.5"
+                        bg-white/90 dark:bg-zinc-800/90 hover:bg-zinc-100 dark:hover:bg-zinc-700/95
+                        transition-all duration-200 text-zinc-800 dark:text-zinc-100 shadow-sm hover:-translate-y-0.5"
                       >
-                        <span className="text-zinc-600 dark:text-zinc-300">
+                        <span className="text-primary-600 dark:text-primary-400">
                           {tech.icon}
                         </span>
                         <span className="font-medium">{tech.name}</span>
@@ -178,11 +178,14 @@ export default function TechStack() {
                         <Badge
                           key={tech.name}
                           variant="outline"
-                          className="px-3 py-1 text-sm font-medium flex items-center border-zinc-300 dark:border-zinc-600 
-                        bg-zinc-100 dark:bg-zinc-800
-                        transition-colors text-zinc-800 dark:text-zinc-200"
+                          className="px-3 py-1 text-sm font-medium flex items-center gap-1.5 border-zinc-300 dark:border-zinc-600 
+                        bg-white dark:bg-zinc-800
+                        transition-colors text-zinc-800 dark:text-zinc-100 hover:bg-zinc-50 dark:hover:bg-zinc-700"
                         >
-                          {tech.icon} {tech.name}
+                          <span className="text-primary-600 dark:text-primary-400">
+                            {tech.icon}
+                          </span>{" "}
+                          {tech.name}
                         </Badge>
                       ))}
                     </div>
