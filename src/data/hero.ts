@@ -3,7 +3,7 @@ import profilePic from "@/assets/images/profile.jpg";
 
 export const heroData: HeroData = {
   name: "John Paul Varde",
-  location: "Quezon City, Philippines",
+  location: "Tanza Cavite, Philippines",
   title: "Front-End Developer and UI/UX Designer",
   email: "paul.varde10@gmail.com",
   profileImage: profilePic,
