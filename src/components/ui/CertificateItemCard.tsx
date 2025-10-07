@@ -3,21 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import { FaCertificate } from "react-icons/fa";
 import { CertificateItem } from "@/types/certificate";
+import { StaggeredCard } from "@/components/animations";
 
 type CertificateItemCardProps = {
   certificate: CertificateItem;
   onClick: () => void;
+  animate?: boolean;
 };
 
 export default function CertificateItemCard({
   certificate,
   onClick,
+  animate = false,
 }: CertificateItemCardProps) {
-  return (
-    <div
-      className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 hover:border-zinc-300 dark:hover:border-primary/30 transition-all duration-300 cursor-pointer"
-      onClick={onClick}
-    >
+  // Base card content
+  const cardContent = (
+    <div className="flex flex-col sm:flex-row gap-3 p-3 sm:p-4 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg hover:shadow-md dark:hover:shadow-zinc-700/50 hover:border-zinc-300 dark:hover:border-primary/30 transition-all duration-300 cursor-pointer w-full">
       {/* Image container - Full width on mobile, left side on larger screens */}
       {certificate.imageSrc ? (
         <div className="w-full sm:w-auto sm:h-24 flex-shrink-0 overflow-hidden rounded-md border border-zinc-200 dark:border-zinc-800">
@@ -36,7 +37,6 @@ export default function CertificateItemCard({
         </div>
       )}
 
-      {/* Content - Below image on mobile, right side on larger screens */}
       {/* Content - Below image on mobile, right side on larger screens */}
       <div className="flex-grow min-w-0 flex flex-col sm:justify-center">
         {/* Mobile view - Badge stays right */}
@@ -105,5 +105,19 @@ export default function CertificateItemCard({
         </div>
       </div>
     </div>
+  );
+
+  // Return either the animated or regular version
+  return animate ? (
+    <StaggeredCard
+      onClick={onClick}
+      dataAttributes={{
+        "cert-id": certificate.title.replace(/\s+/g, "-").toLowerCase(),
+      }}
+    >
+      {cardContent}
+    </StaggeredCard>
+  ) : (
+    <div onClick={onClick}>{cardContent}</div>
   );
 }

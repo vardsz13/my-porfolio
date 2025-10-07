@@ -11,6 +11,7 @@ import ProjectModuleDialog from "@/components/ui/ProjectModuleDialog";
 import useDocumentTitle from "@/utils/useDocumentTitle";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import ContactInfo from "@/components/sections/contact/ContactInfo";
+import { ScrollReveal } from "@/components/animations";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -353,15 +354,19 @@ export default function ProjectDetail() {
         <div className="max-w-5xl mx-auto border-t border-zinc-200 dark:border-zinc-800 py-4"></div>
 
         {/* Let's Connect section - without card styling */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-zinc-800 dark:text-zinc-100">
-            Let's Connect
-          </h2>
-          <p className="text-zinc-600 dark:text-zinc-300 mb-6">Get in Touch</p>
+        <ScrollReveal direction="up" threshold={0.2}>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-zinc-800 dark:text-zinc-100">
+              Let's Connect
+            </h2>
+            <p className="text-zinc-600 dark:text-zinc-300 mb-6">
+              Get in Touch
+            </p>
 
-          {/* Import and use the ContactInfo component */}
-          <ContactInfo />
-        </div>
+            {/* Import and use the ContactInfo component */}
+            <ContactInfo />
+          </div>
+        </ScrollReveal>
       </div>
 
       {/* Footer with container to match content width */}
