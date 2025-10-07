@@ -266,3 +266,28 @@ section,
     transform: translateY(0);
   }
 }
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  .animate-fadeIn {
+    animation-duration: 0.3s !important; /* Faster animations on mobile */
+  }
+
+  /* Force hardware acceleration for smoother animations */
+  .will-change-auto,
+  .animate-fadeIn,
+  .transition-all,
+  [data-scroll-reveal],
+  [data-stagger-item],
+  [data-stagger-container] {
+    will-change: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Reduce page transition time on mobile */
+  .page-transition-out {
+    transition: opacity 0.3s ease-in-out !important;
+  }
+}

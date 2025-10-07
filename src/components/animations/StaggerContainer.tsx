@@ -16,13 +16,13 @@ interface StaggerContainerProps {
 export default function StaggerContainer({
   children,
   className = "",
-  delay = 0.15,
-  staggerDelay = 0.1,
+  delay = 0.1, // Reduced from 0.15 for better mobile performance
+  staggerDelay = 0.08, // Reduced from 0.1 for better mobile performance
   direction = "forward",
-  duration = 0.5,
+  duration = 0.4, // Reduced from 0.5 for better mobile performance
   ease = [0.215, 0.61, 0.355, 1], // Improved easing (cubic-bezier)
   once = true,
-  amount = 0.3,
+  amount = 0.2, // Reduced from 0.3 for better mobile performance
 }: StaggerContainerProps) {
   // Container animation variants
   const containerVariants = {
@@ -42,7 +42,7 @@ export default function StaggerContainer({
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 15, // Reduced from 20 for better mobile performance
     },
     visible: {
       opacity: 1,

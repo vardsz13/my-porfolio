@@ -37,11 +37,11 @@ export default function Projects({ projects }: ProjectsProps) {
         window.scrollTo(0, 0);
         document.body.classList.remove("page-transition-out");
       }, 50);
-    }, 400); // Match this with your CSS transition duration (slightly longer)
+    }, 300); // Reduced from 400ms to 300ms for better mobile performance
   };
 
   return (
-    <ScrollReveal direction="up" duration={0.7} threshold={0.2}>
+    <ScrollReveal direction="up" duration={0.5} threshold={0.1}>
       <section
         id="projects"
         className="bg-white dark:bg-zinc-900 rounded-lg p-6 shadow-sm hover:shadow-md dark:hover:shadow-zinc-700/"
@@ -59,10 +59,10 @@ export default function Projects({ projects }: ProjectsProps) {
             <AnimatePresence>
               {selectedImage && (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ type: "spring", damping: 25, stiffness: 250 }}
                   className="relative max-w-full max-h-[95vh] flex items-center justify-center"
                 >
                   <img
@@ -95,23 +95,24 @@ export default function Projects({ projects }: ProjectsProps) {
         </div>
 
         <StaggerContainer
-          delay={0.3}
-          staggerDelay={0.12}
-          duration={0.6}
-          amount={0.1}
+          delay={0.2}
+          staggerDelay={0.08}
+          duration={0.4}
+          amount={0.05}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
                 whileHover={{
-                  y: -8,
+                  y: -5,
                   transition: {
                     type: "spring",
-                    stiffness: 300,
-                    damping: 20,
+                    stiffness: 200,
+                    damping: 15,
                   },
                 }}
+                className="will-change-auto"
               >
                 <Card
                   data-project-id={project.id}

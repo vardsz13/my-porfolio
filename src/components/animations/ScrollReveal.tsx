@@ -18,9 +18,9 @@ export default function ScrollReveal({
   children,
   direction = "up",
   delay = 0,
-  duration = 0.7,
+  duration = 0.5, // Reduced from 0.7 for better mobile performance
   className = "",
-  distance = 30,
+  distance = 20, // Reduced from 30 for better mobile performance
   once = true,
   threshold = 0.1,
 }: ScrollRevealProps) {
